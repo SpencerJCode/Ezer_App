@@ -1,0 +1,19 @@
+Prgenancy app:
+- If you are pregnant, info provided on where you are, weeks, etc, symptoms
+	- user would indicate due date
+- As you get close, a contraction calculator
+- Account has registered midwife and registered doula, and a hospital chosen (even if homebirth)
+- insurance info could be stored
+- Any pertinent preferntial information that caregiver needs to know
+- Emergency contacts, access to your device GPS
+- this info is pushed to the hospital on it's way
+- The providers/where people go to give birth would have to be aware of this technology
+- letting the hopsital know that you're close
+- When the contraction calculator says GO, click button, load GPS with prevered delivery location, and push info to that center with the gPS time of how long that will take, and then notify everyone involved (midwife, doula, etc)
+- present with iframe for mapping info
+- indicate in profile preferred map?
+- while on way, if you don't make, something happens, need people to come to you, a button for emergency dispatch and pushes that info to 911, need a log of what kind of vehicle and plates
+- trigger the opening of the navigation app, have it go smaller over the main app; or if not moving, bring the main app forward
+
+Database heavy - many to many relationships?
+- login and reg, user table
