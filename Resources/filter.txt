@@ -1,0 +1,55 @@
+PersonAccount newPerson = new PersonAccount("Sarah", 20, true, true, 20);
+PersonAccount newPerson1 = new PersonAccount("Jane", 30, true, false, 30);
+PersonAccount newPerson2 = new PersonAccount("Carole", 40, true, true, 50);
+PersonAccount newPerson3 = new PersonAccount("Tess", 50, true, false, 80);
+PersonAccount newPerson4 = new PersonAccount("Sam", 20, false, true, 20);
+PersonAccount newPerson5 = new PersonAccount("Christie", 30, false, false, 30);
+PersonAccount newPerson6 = new PersonAccount("Tina", 40, false, true, 50);
+PersonAccount newPerson7 = new PersonAccount("Audrey", 50, false, false, 80);
+PersonAccount newPerson8 = new PersonAccount("Bethany", 20, true, true, 20);
+PersonAccount newPerson9 = new PersonAccount("Blaire", 30, true, false, 30);
+PersonAccount newPerson10 = new PersonAccount("Jackie", 40, false, true, 50);
+PersonAccount newPerson11 = new PersonAccount("Jezebel", 50, false, false, 80);
+List<PersonAccount> MyAccounts = new List<PersonAccount>();
+MyAccounts.Add(newPerson);
+MyAccounts.Add(newPerson1);
+MyAccounts.Add(newPerson2);
+MyAccounts.Add(newPerson3);
+MyAccounts.Add(newPerson4);
+MyAccounts.Add(newPerson5);
+MyAccounts.Add(newPerson6);
+MyAccounts.Add(newPerson7);
+MyAccounts.Add(newPerson8);
+MyAccounts.Add(newPerson9);
+MyAccounts.Add(newPerson10);
+MyAccounts.Add(newPerson11);
+
+int? distance = 50;
+bool wantDoula = true;
+bool wantMidwife = false;
+List<PersonAccount> filteredAccounts = new List<PersonAccount>();
+
+foreach (PersonAccount person in MyAccounts)
+{
+    filteredAccounts.Add(person);
+}
+if (wantDoula)
+{
+    filteredAccounts = filteredAccounts.FindAll(a => a.isDoula == true);
+}
+if (wantMidwife)
+{
+    filteredAccounts = filteredAccounts.FindAll(a => a.isMidwife == true);
+}
+filteredAccounts = filteredAccounts.FindAll(a => a.Distance < distance);
+
+foreach (PersonAccount person in filteredAccounts)
+{
+    Console.WriteLine(person.Name);
+    Console.WriteLine(person.Age);
+    Console.WriteLine("Click here [--] to request an intro!");
+}
+if (filteredAccounts.Count == 0)
+{
+    Console.WriteLine("No caregivers found with your search criteria :(");
+}
