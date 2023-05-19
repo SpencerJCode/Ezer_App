@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj": {}
+    "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj": {
+    "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
         "projectName": "Ezer_App.Client",
-        "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+        "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
         "packagesPath": "C:\\Users\\Spencer Laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
-                "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
+              "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
+                "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj": {
+    "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj",
         "projectName": "Ezer_App.Server",
-        "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj",
+        "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Server\\Ezer_App.Server.csproj",
         "packagesPath": "C:\\Users\\Spencer Laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Server\\obj\\",
+        "outputPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -119,11 +119,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj": {
-                "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj"
+              "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj": {
+                "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj"
               },
-              "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
-                "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
+              "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
+                "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
               }
             }
           }
@@ -166,14 +166,14 @@
         }
       }
     },
-    "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
+    "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
         "projectName": "Ezer_App.Shared",
-        "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
+        "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
         "packagesPath": "C:\\Users\\Spencer Laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

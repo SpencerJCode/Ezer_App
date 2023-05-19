@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
       "projectName": "Ezer_App.Shared",
-      "projectPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
+      "projectPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
       "packagesPath": "C:\\Users\\Spencer Laptop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

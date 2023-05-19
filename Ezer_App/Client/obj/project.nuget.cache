@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uDKphhJ2ozfU1NbYHSZ1qiegnaVrAp2he/VG1RXuSz8/m8CI8cGRuXptfiR3s5moo7UDzO/7KN60lqIJFvC1OA==",
+  "dgSpecHash": "cFoyRRoxKFyEzH4e4diekJoXO5jxyvyEKS5d0+3Byw3VqBHYhLZc6hAphvrzlg65nrvKyE6GVePzWsLaonBPig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Spencer Laptop\\source\\repos\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+  "projectFilePath": "C:\\Users\\Spencer Laptop\\Documents\\GitHub\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Spencer Laptop\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\Spencer Laptop\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",

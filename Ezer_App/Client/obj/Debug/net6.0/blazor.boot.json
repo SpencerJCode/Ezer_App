@@ -196,15 +196,15 @@
       "mscorlib.dll": "sha256-C3gpWQMELcHYfrHU\/1agQUvWTtSNs9Ul2suMxcKFnIc=",
       "netstandard.dll": "sha256-CgGkoZQx73t3qchcsu85kgBcgrjNEOiudArOwKNb18k=",
       "System.Private.CoreLib.dll": "sha256-6nUSjiT7okMlkN897OnDypwppYuK7JxTahOClXkAuwE=",
-      "Ezer_App.Shared.dll": "sha256-TZ2olum3IoxEUlLcrFsZ4ngsbvlSeOW0mD9v24tuEjE=",
-      "Ezer_App.Client.dll": "sha256-+4unb2KG5FffrYow4Vc6a8HUwvTbfAO0jkKOAU+NlvA="
+      "Ezer_App.Shared.dll": "sha256-JauHd3Lbfoz7oUaLKx0Hw08c\/P6iaypZhRAKMsZwnLI=",
+      "Ezer_App.Client.dll": "sha256-hGkk5uW8LtyFNrfCKvSNqb3\/OvhZ4MHtcyIG2Evsx\/I="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Ezer_App.Shared.pdb": "sha256-vKtDugfHrn9+\/XT7zjJxxNsNbh0V7gLjOZ7d1nB6Dlg=",
-      "Ezer_App.Client.pdb": "sha256-C8D46jpS8aQrgb4bWNH+MvJV1cBEhP7s8F2C8Iodif8="
+      "Ezer_App.Shared.pdb": "sha256-eLX90ci0vwTEb+7Q3fNqJ0S\/gzDSKQoEnOQ52Q\/Wt\/o=",
+      "Ezer_App.Client.pdb": "sha256-SXk3U+TRsQZm0pz+1iSqqgGm5RYzcMOeOlGMt6TVqPE="
     },
     "runtime": {
       "dotnet.6.0.16.dlod6lkvuj.js": "sha256-GT2gK+GjOisRXJY+9yh6H8s6K\/KDIsaFMFIgWvAnttY=",
