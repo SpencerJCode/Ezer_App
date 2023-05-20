@@ -1,0 +1,28 @@
+.navbar-body {
+  background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57,159,209,.5) 100%);
+}
+
+.navlinks a {
+  font-size: 1.4rem;
+  color: rgb(37, 71, 90);
+  text-decoration: none;
+}
+
+.navlinks {
+  font-size: 1.3rem;
+  color: rgb(37, 71, 90);
+  margin-top: 10px;
+}
+
+.site-title {
+  text-decoration: none;
+  color: inherit;
+  color: rgb(37, 71, 90);
+}
+
+h1 {
+  font-family: 'KlubKatz', sans-serif;
+  font-weight: 900;
+  font-size: 4rem !important;
+  margin: 0;
+}

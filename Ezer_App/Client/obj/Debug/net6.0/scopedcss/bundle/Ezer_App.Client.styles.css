@@ -80,6 +80,35 @@ main[b-avg83zpdjh] {
         padding-right: 1.5rem !important;
     }
 }
+/* /Shared/NavbarNotLoggedIn.razor.rz.scp.css */
+.navbar-body[b-25mzjgzejr] {
+  background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57,159,209,.5) 100%);
+}
+
+.navlinks a[b-25mzjgzejr] {
+  font-size: 1.4rem;
+  color: rgb(37, 71, 90);
+  text-decoration: none;
+}
+
+.navlinks[b-25mzjgzejr] {
+  font-size: 1.3rem;
+  color: rgb(37, 71, 90);
+  margin-top: 10px;
+}
+
+.site-title[b-25mzjgzejr] {
+  text-decoration: none;
+  color: inherit;
+  color: rgb(37, 71, 90);
+}
+
+h1[b-25mzjgzejr] {
+  font-family: 'KlubKatz', sans-serif;
+  font-weight: 900;
+  font-size: 4rem !important;
+  margin: 0;
+}
 /* /Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-zfa7f46glc] {
     background-color: rgba(255, 255, 255, 0.1);
