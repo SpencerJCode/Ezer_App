@@ -17,12 +17,27 @@
 .site-title {
   text-decoration: none;
   color: inherit;
-  color: rgb(37, 71, 90);
+}
+
+.site-title img {
+  width: 70px;
+  height: 70px;
 }
 
 h1 {
   font-family: 'KlubKatz', sans-serif;
   font-weight: 900;
-  font-size: 4rem !important;
+  font-size: 3rem !important;
   margin: 0;
+  word-spacing: -1rem !important;
+  color: rgb(37, 71, 90);
+}
+
+h3 {
+  font-family: 'KlubKatz', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem !important;
+  margin-top: -5px;
+  word-spacing: -.5rem !important;
+  color: rgb(53, 99, 126);
 }
