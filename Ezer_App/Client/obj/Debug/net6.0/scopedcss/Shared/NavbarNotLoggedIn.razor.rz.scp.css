@@ -1,5 +1,10 @@
 .navbar-body[b-25mzjgzejr] {
   background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57,159,209,.5) 100%);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background-color: rgba(255,255,255,.7);
+  backdrop-filter: blur(15px);
 }
 
 .navlinks a[b-25mzjgzejr] {

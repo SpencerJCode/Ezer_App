@@ -1,3 +1,50 @@
+/* /Pages/HomePage.razor.rz.scp.css */
+/* .home-container {
+  overflow-x: hidden;
+  position: relative;
+  top: -18px;
+  width: 110%;
+  left: -5%;
+  z-index: -1;
+}
+
+.header-bg {
+  width: 100%;
+} */
+
+.white-bg[b-eoktrec1zn] {
+  width: 110%;
+  height: 106px;
+  position: relative;
+  z-index: 0;
+  background-color: white;
+  top: -113px;
+  left: -5%;
+}
+
+.box-shadow-top[b-eoktrec1zn] {
+  
+}
+
+.test-box[b-eoktrec1zn] {
+  background-color: white;
+  width: 104%;
+  left: -2.2%;
+  position: relative;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+  padding: 20px;
+  padding-bottom: 300px;
+}
+
+.test-box-2[b-eoktrec1zn] {
+  background-color: white;
+  width: 104%;
+  left: -2.2%;
+  position: relative;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+  padding: 20px;
+  padding-bottom: 300px;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-avg83zpdjh] {
     position: relative;
@@ -83,6 +130,11 @@ main[b-avg83zpdjh] {
 /* /Shared/NavbarNotLoggedIn.razor.rz.scp.css */
 .navbar-body[b-25mzjgzejr] {
   background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57,159,209,.5) 100%);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background-color: rgba(255,255,255,.7);
+  backdrop-filter: blur(15px);
 }
 
 .navlinks a[b-25mzjgzejr] {
