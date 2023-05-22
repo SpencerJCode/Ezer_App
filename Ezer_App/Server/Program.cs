@@ -1,11 +1,22 @@
+global using Microsoft.EntityFrameworkCore;
+global using Ezer_App.Shared;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddRazorPages();
+builder.Services.AddSession();
+
+builder.Services.AddDbContext<MyContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 var app = builder.Build();
 
@@ -25,9 +36,14 @@ app.UseHttpsRedirection();
 
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
-
+app.UseAuthorization();
 app.UseRouting();
+app.UseSession();
 
+// app.MapControllerRoute(
+//     name: "default",
+//     pattern: "{controller=Home}/{action=Index}/{id?}"
+// );
 
 app.MapRazorPages();
 app.MapControllers();

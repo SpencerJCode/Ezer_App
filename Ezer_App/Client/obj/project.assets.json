@@ -1793,11 +1793,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+      "projectUniqueName": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
       "projectName": "Ezer_App.Client",
-      "projectPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+      "projectPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
       "packagesPath": "C:\\Users\\wiore\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\obj\\",
+      "outputPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Ezer_App\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wiore\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1814,8 +1814,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
-              "projectPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
+            "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj": {
+              "projectPath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj"
             }
           }
         }
