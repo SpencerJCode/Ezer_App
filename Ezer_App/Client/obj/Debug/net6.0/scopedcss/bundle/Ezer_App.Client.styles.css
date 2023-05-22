@@ -129,11 +129,11 @@ main[b-avg83zpdjh] {
 }
 /* /Shared/NavbarNotLoggedIn.razor.rz.scp.css */
 .navbar-body[b-25mzjgzejr] {
-  background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57,159,209,.5) 100%);
+  background: linear-gradient(0deg, rgba(63, 128, 160, .6) 0%, rgba(57,159,209,.5) 100%);
   position: fixed;
   width: 100%;
   z-index: 99;
-  background-color: rgba(255,255,255,.7);
+  background-color: rgba(255,255,255,.3);
   backdrop-filter: blur(15px);
 }
 
@@ -152,6 +152,7 @@ main[b-avg83zpdjh] {
 .site-title[b-25mzjgzejr] {
   text-decoration: none;
   color: inherit;
+  /* filter: drop-shadow(0px 0px 30px rgba(255,255,255,.3)) drop-shadow(0px 0px 10px rgba(255,255,255,.1)); */
 }
 
 .site-title img[b-25mzjgzejr] {

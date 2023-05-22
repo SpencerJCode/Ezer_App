@@ -194,43 +194,6 @@
         }
       },
       {
-        "HashCode": -443902466,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.FetchData",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 1668909962,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.FetchData",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ezer_App.Client.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": -1162799268,
         "Kind": "Components.Component",
         "Name": "Ezer_App.Client.Pages.FindCaregiver",
@@ -299,43 +262,6 @@
         "Metadata": {
           "Common.TypeName": "Ezer_App.Client.Pages.HiEvan",
           "Common.TypeNameIdentifier": "HiEvan",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -696272412,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Login",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Login",
-          "Common.TypeNameIdentifier": "Login",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 382821724,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Login",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ezer_App.Client.Pages.Login"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Login",
-          "Common.TypeNameIdentifier": "Login",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -484,6 +410,80 @@
         "Metadata": {
           "Common.TypeName": "Ezer_App.Client.Pages.HomePage",
           "Common.TypeNameIdentifier": "HomePage",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -443902466,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.FetchData",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "FetchData"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.FetchData",
+          "Common.TypeNameIdentifier": "FetchData",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 1668909962,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.FetchData",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ezer_App.Client.Pages.FetchData"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.FetchData",
+          "Common.TypeNameIdentifier": "FetchData",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -696272412,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Login",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Login",
+          "Common.TypeNameIdentifier": "Login",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 382821724,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Login",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ezer_App.Client.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Login",
+          "Common.TypeNameIdentifier": "Login",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -647,43 +647,6 @@
         }
       },
       {
-        "HashCode": -1710059746,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavbarNotLoggedIn"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
-          "Common.TypeNameIdentifier": "NavbarNotLoggedIn",
-          "Common.TypeNamespace": "Ezer_App.Client.Shared",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -1050439098,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ezer_App.Client.Shared.NavbarNotLoggedIn"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
-          "Common.TypeNameIdentifier": "NavbarNotLoggedIn",
-          "Common.TypeNamespace": "Ezer_App.Client.Shared",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": 1718085598,
         "Kind": "Components.Component",
         "Name": "Ezer_App.Client.Shared.MainLayout",
@@ -787,6 +750,43 @@
           "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.None"
+        }
+      },
+      {
+        "HashCode": -1710059746,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavbarNotLoggedIn"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
+          "Common.TypeNameIdentifier": "NavbarNotLoggedIn",
+          "Common.TypeNamespace": "Ezer_App.Client.Shared",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -1050439098,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ezer_App.Client.Shared.NavbarNotLoggedIn"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Shared.NavbarNotLoggedIn",
+          "Common.TypeNameIdentifier": "NavbarNotLoggedIn",
+          "Common.TypeNamespace": "Ezer_App.Client.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
         }
       },
       {
