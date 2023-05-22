@@ -9,13 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ezer_App.Server
 build_property.RootNamespace = Ezer_App.Server
-build_property.ProjectDir = c:\Users\Spencer Laptop\Documents\GitHub\Ezer_App\Ezer_App\Server\
+build_property.ProjectDir = D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Server\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Spencer Laptop\Documents\GitHub\Ezer_App\Ezer_App\Server
+build_property.MSBuildProjectDirectory = D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Server
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Spencer Laptop/Documents/GitHub/Ezer_App/Ezer_App/Server/Pages/Error.cshtml]
+[D:/Documents/Work/Coding/Coding Dojo/Assignments/CSharp/Blazor/ezer/Ezer_App/Server/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

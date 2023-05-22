@@ -69,6 +69,14 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\images\\baby-feet.jpeg",
+      "PackagePath": "staticwebassets\\images\\baby-feet.jpeg"
+    },
+    {
+      "Id": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\images\\ezer-logo.png",
+      "PackagePath": "staticwebassets\\images\\ezer-logo.png"
+    },
+    {
       "Id": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

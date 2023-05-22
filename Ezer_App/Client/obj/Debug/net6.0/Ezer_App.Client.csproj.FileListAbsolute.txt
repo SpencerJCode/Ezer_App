@@ -2483,3 +2483,4 @@ D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Cli
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.pdb
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\ref\Ezer_App.Client.dll
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\scopedcss\Shared\NavbarNotLoggedIn.razor.rz.scp.css
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\scopedcss\Pages\HomePage.razor.rz.scp.css
