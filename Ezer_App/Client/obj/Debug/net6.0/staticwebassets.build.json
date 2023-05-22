@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mCwzKAHa1cqOj9W5zo2o1ebbnnYMRGT4+k8ylie4Zxc=",
+  "Hash": "sJhP9hmC2ebl27KQVAWwup+5RI9XcjFIwj/ELTIBUY0=",
   "Source": "Ezer_App.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7155,40 +7155,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\baby-feet.jpeg"
-    },
-    {
-      "Identity": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\images\\baby-feet.png",
-      "SourceId": "Ezer_App.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "images/baby-feet.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\baby-feet.png"
-    },
-    {
-      "Identity": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\images\\baby-feet2.jpg",
-      "SourceId": "Ezer_App.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "images/baby-feet2.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\baby-feet2.jpg"
     },
     {
       "Identity": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\wwwroot\\images\\ezer-logo.png",

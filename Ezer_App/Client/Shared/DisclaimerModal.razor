@@ -11,7 +11,7 @@
         <button type="button" class="btn btn-sm btn-danger" @onclick="@ModalCancel"><span class="oi oi-x" aria-hidden="true"></span></button>
       </div>
       <div class="modal-body">
-        <p>You have been disclaimed. Do you accept?</p>
+        <p>@ModalBody</p>
       </div>
       <div class="modal-footer">
         <div class="footer-buttons d-flex gap-5 m-auto">
@@ -26,6 +26,9 @@
 @code {  
   [Parameter]
   public EventCallback<bool> OnClose { get;set; }
+  
+  [Parameter]
+  public string ModalBody { get;set; } = "This is the modal body.";
   
   private Task ModalCancel()
   {
