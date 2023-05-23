@@ -5087,43 +5087,6 @@
         }
       },
       {
-        "HashCode": -2097166178,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Dashboard",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Dashboard"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
-          "Common.TypeNameIdentifier": "Dashboard",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -866075540,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Dashboard",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ezer_App.Client.Pages.Dashboard"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
-          "Common.TypeNameIdentifier": "Dashboard",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": 686086916,
         "Kind": "Components.Component",
         "Name": "Ezer_App.Client.Pages.Details",
@@ -5451,6 +5414,43 @@
         "Metadata": {
           "Common.TypeName": "Ezer_App.Client.Pages.MyAccount",
           "Common.TypeNameIdentifier": "MyAccount",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -2097166178,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Dashboard"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
+          "Common.TypeNameIdentifier": "Dashboard",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -866075540,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ezer_App.Client.Pages.Dashboard"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
+          "Common.TypeNameIdentifier": "Dashboard",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
