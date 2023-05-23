@@ -207,3 +207,6 @@ D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\Ezer_App.Server.csproj.CopyComplete
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\Ezer_App.Server.genruntimeconfig.cache
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\ref\Ezer_App.Server.dll
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\Ezer_App.Server.dll
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\refint\Ezer_App.Server.dll
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Server\obj\Debug\net6.0\Ezer_App.Server.pdb

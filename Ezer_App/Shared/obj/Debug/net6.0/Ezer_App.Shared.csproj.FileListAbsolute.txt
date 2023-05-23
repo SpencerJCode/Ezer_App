@@ -48,7 +48,4 @@ D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Shared\obj\Debug\net6.0\Ezer_App.Shared.dll
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Shared\obj\Debug\net6.0\refint\Ezer_App.Shared.dll
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Shared\obj\Debug\net6.0\Ezer_App.Shared.pdb
-<<<<<<< HEAD
-=======
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Shared\obj\Debug\net6.0\ref\Ezer_App.Shared.dll
->>>>>>> Dashboard
