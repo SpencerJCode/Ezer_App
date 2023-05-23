@@ -2484,3 +2484,12 @@ D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Cli
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\ref\Ezer_App.Client.dll
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\scopedcss\Shared\NavbarNotLoggedIn.razor.rz.scp.css
 D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\ezer\Ezer_App\Client\obj\Debug\net6.0\scopedcss\Pages\HomePage.razor.rz.scp.css
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.csproj.AssemblyReference.cache
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.AssemblyInfoInputs.cache
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.AssemblyInfo.cs
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.csproj.CoreCompileInputs.cache
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.dll
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\refint\Ezer_App.Client.dll
+D:\Documents\Work\Coding\Coding Dojo\Assignments\CSharp\Blazor\Ezer_App\Ezer_App\Client\obj\Debug\net6.0\Ezer_App.Client.pdb
