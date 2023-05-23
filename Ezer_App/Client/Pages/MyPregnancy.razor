@@ -1,5 +1,39 @@
 @page "/mypregnancy"
 
+<div class="mypregnancy-container" style="margin-left: 250px;">
+  <div class="card col-7 m-auto mt-4">
+    <div class="card-header text-center">
+      <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
+    </div>
+    <div class="card-body">
+      @{
+        var DueDate = DateTime.Now.AddDays(20 * 7 + 1);
+        var ConceptionDate = DateTime.Now;
+        var TimeDiff = DueDate - ConceptionDate;
+        int? NumOfWeeks = TimeDiff.Days / 7;
+        <p>You are @NumOfWeeks weeks along!</p>
+      }
+    </div>
+  </div>
+
+  <div class="card col-3 m-auto mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="display-6 text-center" style="font-size: 1.3rem;">Update Due Date:</h3>
+        <div class="form-floating mt-3">
+          <input type="text" name="DueDate" id="DueDate" placeholder="Your Due Date:" class="form-control">
+          <label for="DueDate">Your Due Date:</label>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Update" class="btn btn-primary mt-3 box-shadow">
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 @* //navbar-logged-in
 
 //side-menu
