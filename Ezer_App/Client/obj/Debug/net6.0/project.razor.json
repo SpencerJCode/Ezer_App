@@ -268,37 +268,37 @@
         }
       },
       {
-        "HashCode": 1708718106,
+        "HashCode": 691152884,
         "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "Name": "Ezer_App.Client.Pages.CaregiverSearch",
         "AssemblyName": "Ezer_App.Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Dashboard"
+            "TagName": "CaregiverSearch"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
-          "Common.TypeNameIdentifier": "Dashboard",
+          "Common.TypeName": "Ezer_App.Client.Pages.CaregiverSearch",
+          "Common.TypeNameIdentifier": "CaregiverSearch",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 1983631404,
+        "HashCode": -1151944803,
         "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "Name": "Ezer_App.Client.Pages.CaregiverSearch",
         "AssemblyName": "Ezer_App.Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Ezer_App.Client.Pages.Dashboard"
+            "TagName": "Ezer_App.Client.Pages.CaregiverSearch"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
-          "Common.TypeNameIdentifier": "Dashboard",
+          "Common.TypeName": "Ezer_App.Client.Pages.CaregiverSearch",
+          "Common.TypeNameIdentifier": "CaregiverSearch",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -336,43 +336,6 @@
         "Metadata": {
           "Common.TypeName": "Ezer_App.Client.Pages.Contact",
           "Common.TypeNameIdentifier": "Contact",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 1690487113,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Counter",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "Ezer_App.Client.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -101968454,
-        "Kind": "Components.Component",
-        "Name": "Ezer_App.Client.Pages.Counter",
-        "AssemblyName": "Ezer_App.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ezer_App.Client.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Ezer_App.Client.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -447,6 +410,43 @@
         "Metadata": {
           "Common.TypeName": "Ezer_App.Client.Pages.About",
           "Common.TypeNameIdentifier": "About",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 1708718106,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Dashboard"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
+          "Common.TypeNameIdentifier": "Dashboard",
+          "Common.TypeNamespace": "Ezer_App.Client.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 1983631404,
+        "Kind": "Components.Component",
+        "Name": "Ezer_App.Client.Pages.Dashboard",
+        "AssemblyName": "Ezer_App.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ezer_App.Client.Pages.Dashboard"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Ezer_App.Client.Pages.Dashboard",
+          "Common.TypeNameIdentifier": "Dashboard",
           "Common.TypeNamespace": "Ezer_App.Client.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -16107,6 +16107,11 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "d:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Client\\Pages\\CaregiverSearch.razor",
+      "TargetPath": "Pages\\CaregiverSearch.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "d:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Client\\Shared\\DisclaimerModal.razor",
       "TargetPath": "Shared\\DisclaimerModal.razor",
       "FileKind": "component"
@@ -16129,11 +16134,6 @@
     {
       "FilePath": "d:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Client\\Pages\\FindCaregiver.razor",
       "TargetPath": "Pages\\FindCaregiver.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Client\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     },
     {

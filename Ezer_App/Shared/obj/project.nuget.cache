@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RXOC4IRxc+hdVZg4LT6XDjAVOzGdIH4xqF5DsNR+pR6md+NwvDOOhzqbt71mgq6arN7IB14eWwkcfbLzgXgoew==",
+  "dgSpecHash": "/dYx9KrXIJrNHy4+gi7BAvcVKaXN8gvn4nd/ykYBMoagHKFKpLOvhtZktX68mEax0R6Mbk1tt+9L1OI3I9If1Q==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
+  "projectFilePath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Shared\\Ezer_App.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

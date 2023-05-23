@@ -1,0 +1,21 @@
+.form-control[b-0gyc9qrsbc] {
+  font-size: .8rem;
+  height: 30px;
+  padding: 0;
+}
+
+.form-floating[b-0gyc9qrsbc] {
+  font-size: .8rem;
+}
+
+label[b-0gyc9qrsbc] {
+  margin-top: -10px;
+}
+
+.form-floating>.form-control:focus~label[b-0gyc9qrsbc], .form-floating>.form-control:not(:placeholder-shown)~label[b-0gyc9qrsbc] {
+  margin-top: -5px;
+}
+
+.card-header-2[b-0gyc9qrsbc] {
+  height: 40px;
+}

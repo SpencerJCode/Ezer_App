@@ -8,8 +8,20 @@ body {
 }
 
 .card {
-    background: linear-gradient(0deg, rgba(63, 128, 160, .7) 0%, rgba(57, 159, 209, .5) 100%);
+    background: linear-gradient(0deg, rgb(161, 193, 208) 0%, rgb(186, 222, 239) 100%);
     border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.card-1 {
+    background-color: rgb(140, 179, 198) !important;
+    padding: 13px 20px;
+    border-radius: 15px;
+}
+
+.card-2 {
+    background: rgb(186, 232, 255) !important;
+    padding: 13px 20px;
+    border-radius: 15px;
 }
 
 .card-header {
@@ -176,4 +188,8 @@ a,
 
 ::-webkit-scrollbar-thumb:hover {
     background: #83b2ca;
+}
+
+.box-shadow {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
 }

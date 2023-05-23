@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PDx3TvuKoFsw4HFmSUutNIrca7GbawjkF1bAJDobfKDljxEmUgGV0u9LWH/hwdiGjWXuKvyLs1uvF9vab4SKDA==",
+  "dgSpecHash": "KM7eic9hh4YHXgV2RFsOALv1hd7do6xRAC/CO1zNoj8RGRO7UOm4AOMSjmcryvbdRzKhX+ij2I1GalK3gkXUtg==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\ezer\\Ezer_App\\Client\\Ezer_App.Client.csproj",
+  "projectFilePath": "D:\\Documents\\Work\\Coding\\Coding Dojo\\Assignments\\CSharp\\Blazor\\Ezer_App\\Ezer_App\\Client\\Ezer_App.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wiore\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\wiore\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",

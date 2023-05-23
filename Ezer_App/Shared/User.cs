@@ -38,6 +38,6 @@ public class User
   public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
   [NotMapped]
-  [Requireds]
+  [Required]
   public string ConfirmPassword { get; set; }
 }
