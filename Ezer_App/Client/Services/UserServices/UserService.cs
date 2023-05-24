@@ -16,14 +16,15 @@ namespace Ezer_App.Client.Services.UserService
     public List<User> Users { get; set; } = new List<User>();
     public async Task CreateUser(User user)
     {
-      var result = await _http.PostAsJsonAsync("api/user", user);
-      await SetUsers(result);
+      var result = await _http.PostAsJsonAsync("/api/User/create", user);
+      // await SetUsers(result);
+      Console.WriteLine(result);
     }
     private async Task SetUsers(HttpResponseMessage result)
     {
       var response = await result.Content.ReadFromJsonAsync<List<User>>();
       Users = response;
-      _navigationManager.NavigateTo("users");
+      _navigationManager.NavigateTo("dashboard");
     }
     public async Task DeleteUser(int id)
     {

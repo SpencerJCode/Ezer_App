@@ -12,11 +12,14 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddRazorPages();
-builder.Services.AddSession();
+builder.Services.AddSession(options => {
+    options.Cookie.Name = ".Ezer_App.Session";
+});
 
 builder.Services.AddDbContext<MyContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+// builder.Services.AddDbContext<MyContext>(options => options.UseMySql(connectionString));
 });
 
 var app = builder.Build();

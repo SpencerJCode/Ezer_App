@@ -11,33 +11,58 @@
       </div>
       <div class="card-body p-4">
 
-        <EditForm Model="user">
+        <EditForm Model="@newUser" OnSubmit="@ModalAgree" method="post">
 
           <div class="form-floating">
-            <input for="FirstName" class="form-control" @bind-value="user.FirstName" placeholder="First Name:">
+            <input for="FirstName" class="form-control" @bind-value="newUser.FirstName" placeholder="First Name:">
             <label id="FirstName">First Name:</label>
           </div>
           <div class="form-floating mt-3">
-            <input for="LastName" class="form-control" placeholder="Last Name:" @bind-value="user.LastName">
+            <input for="LastName" class="form-control" placeholder="Last Name:" @bind-value="newUser.LastName">
             <label id="LastName">Last Name:</label>
           </div>
           <div class="form-floating mt-3">
-            <input for="Email" class="form-control" placeholder="Email:" @bind-value="user.Email">
+            <input for="Email" class="form-control" placeholder="Email:" @bind-value="newUser.Email">
             <label id="Email">Email:</label>
           </div>
           <div class="form-floating mt-3">
-            <input for="Password" class="form-control" placeholder="Password:" @bind-value="user.Password">
+            <input for="Password" class="form-control" placeholder="Password:" @bind-value="newUser.Password">
             <label id="Password">Password:</label>
           </div>
           <div class="form-floating mt-3">
-            <input for="ConfirmPassword" class="form-control" placeholder="Confirm Password:" @bind-value="user.ConfirmPassword">
+            <input for="ConfirmPassword" class="form-control" placeholder="Confirm Password:"
+            @bind-value="newUser.ConfirmPassword">
             <label id="ConfirmPassword">Confirm Password:</label>
           </div>
           <button type="button" class="mt-3 btn btn-primary" @onclick="() => OpenDisclaimerModal()">Register</button>
 
           @if (DisclaimerModelOpen)
           {
-            <DisclaimerModal OnClose="@OnDisclaimerAgree" ModalBody="This is the modified text." />
+            <div class="modal fade show" id="myModal" style="display:block; backdrop-filter: blur(5px);" aria-modal="true"
+              role="dialog">
+              <div class="modal-dialog shadow">
+                <div class="modal-content">
+                  <div class="modal-header d-flex align-items-start">
+                    <div style="width: 30px;"></div>
+                    <div class="text m-auto">
+                      <h4 class="display-6">DISCLAIMER</h4>
+                      <h5 class="mb-0 display-6" style="font-size: 1.5rem;">Please read...</h5>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-danger" @onclick="@ModalCancel"><span class="oi oi-x"
+                        aria-hidden="true"></span></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>@ModalBody</p>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="footer-buttons d-flex gap-5 m-auto">
+                      <a href="/" class="btn btn-primary">No Thanks</a>
+                      <button type="submit" class="btn btn-success">I Agree</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           }
 
         </EditForm>
@@ -74,9 +99,31 @@
 
 
 @code {
-  public bool DisclaimerModelOpen { get; set; }
+  @* modal functions *@
+  [Parameter]
+  public EventCallback<bool> OnClose { get; set; }
 
-  User? user = new User();
+  User? newUser = new User();
+
+  [Parameter]
+  public string ModalBody { get; set; } = "This is the modal body.";
+
+  private async Task ModalAgree()
+  {
+    @* Console.WriteLine(newUser.FirstName); *@
+    await UserService.CreateUser(newUser);
+    NavigationManager.NavigateTo("dashboard");
+  }
+
+  private void ModalCancel()
+  {
+    DisclaimerModelOpen = false;
+  }
+
+
+
+
+  public bool DisclaimerModelOpen { get; set; }
 
   LoginUser? loginUser = new LoginUser();
 
@@ -84,9 +131,9 @@
   {
     DisclaimerModelOpen = false;
     @* async Task HandleSubmit()
-    {
-      await UserService.CreateUser(user);
-    } *@
+{
+await UserService.CreateUser(user);
+} *@
     StateHasChanged();
   }
 

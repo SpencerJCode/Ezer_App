@@ -6,7 +6,7 @@ namespace Ezer_App.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         private readonly MyContext _context;
         public UserController(MyContext context)
@@ -32,21 +32,22 @@ namespace Ezer_App.Server.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateUser(User newUser)
+        [HttpPost("/create")]
+        public async Task<IActionResult> CreateNewUser(User newUser)
         {
-            PasswordHasher<User> Hasher = new PasswordHasher<User>();   
-            newUser.Password = Hasher.HashPassword(newUser, newUser.Password); 
-            _context.Users.Add(newUser);
-            await _context.SaveChangesAsync();
-            User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
-            if (loggedInUser != null)
-            { 
-                HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
-                HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
-                // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
-                // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
-            }
+            // PasswordHasher<User> Hasher = new PasswordHasher<User>();   
+            // newUser.Password = Hasher.HashPassword(newUser, newUser.Password); 
+            Console.WriteLine("HELLO__________________________________________________________");
+            // _context.Users.Add(newUser);
+            // await _context.SaveChangesAsync();
+            // User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
+            // if (loggedInUser != null)
+            // { 
+            //     HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
+            //     HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
+            //     // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
+            //     // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
+            // }
             return Ok();
         }
 

@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Ezer_App.Shared;
-
-public class User
+namespace Ezer_App.Shared
 {
+  public class User
+  {
     [Key]
     public int UserId { get; set; }
     [Required]
@@ -42,4 +42,5 @@ public class User
     [NotMapped]
     [Required]
     public string ConfirmPassword { get; set; }
+  }
 }
