@@ -16,7 +16,7 @@ namespace Ezer_App.Client.Services.UserService
     public List<User> Users { get; set; } = new List<User>();
     public async Task CreateUser(User user)
     {
-      var result = await _http.PostAsJsonAsync("/api/User/create", user);
+      var result = await _http.PostAsJsonAsync("api/user", user);
       // await SetUsers(result);
       Console.WriteLine(result);
     }

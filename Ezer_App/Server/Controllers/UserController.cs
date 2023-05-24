@@ -32,85 +32,90 @@ namespace Ezer_App.Server.Controllers
             return Ok(user);
         }
 
-        [HttpPost("/create")]
-        public async Task<IActionResult> CreateNewUser(User newUser)
+        [HttpPost]
+        public async Task<IActionResult> CreateNewUser(User submittedUser)
         {
-            // PasswordHasher<User> Hasher = new PasswordHasher<User>();   
-            // newUser.Password = Hasher.HashPassword(newUser, newUser.Password); 
-            Console.WriteLine("HELLO__________________________________________________________");
-            // _context.Users.Add(newUser);
-            // await _context.SaveChangesAsync();
-            // User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
-            // if (loggedInUser != null)
-            // { 
-            //     HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
-            //     HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
-            //     // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
-            //     // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
-            // }
+
+            User? newUser = new User();
+            newUser.FirstName = submittedUser.FirstName;
+            newUser.LastName = submittedUser.LastName;
+            newUser.Email = submittedUser.Email;
+            PasswordHasher<User> Hasher = new PasswordHasher<User>();   
+            submittedUser.Password = Hasher.HashPassword(submittedUser, submittedUser.Password);
+            newUser.Password = submittedUser.Password;
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+            User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
+            if (loggedInUser != null)
+            { 
+                // HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
+                // HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
+                // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
+                // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
+            }
             return Ok();
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(User UpdatedUser, int id)
-        {
-            User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-            if (UserInDB == null)
-            {
-                return NotFound("No user found");
-            }
-            UserInDB.FirstName = UpdatedUser.FirstName;
-            UserInDB.LastName = UpdatedUser.LastName;
-            UserInDB.Email = UpdatedUser.Email;
-            UserInDB.IsDoula = UpdatedUser.IsDoula;
-            UserInDB.IsMidwife = UpdatedUser.IsMidwife;
-            UserInDB.DueDate = UpdatedUser.DueDate;
-            UserInDB.PhoneNumber = UpdatedUser.PhoneNumber;
-            UserInDB.AddressStreet = UpdatedUser.AddressStreet;
-            UserInDB.AddressCity = UpdatedUser.AddressCity;
-            UserInDB.AddressState = UpdatedUser.AddressState;
-            UserInDB.AddressZipcode = UpdatedUser.AddressZipcode;
-            UserInDB.EmergencyFirstName = UpdatedUser.EmergencyFirstName;
-            UserInDB.EmergencyLastName = UpdatedUser.EmergencyLastName;
-            UserInDB.EmergencyNumber = UpdatedUser.EmergencyNumber;
-            UserInDB.SpouseFirstName = UpdatedUser.SpouseFirstName;
-            UserInDB.SpouseLastName = UpdatedUser.SpouseLastName;
-            UserInDB.SpouseNumber = UpdatedUser.SpouseNumber;
-            UserInDB.UpdatedAt = DateTime.Now;
-            await _context.SaveChangesAsync();
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> UpdateUser(User UpdatedUser, int id)
+        // {
+        //     User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
+        //     if (UserInDB == null)
+        //     {
+        //         return NotFound("No user found");
+        //     }
+        //     UserInDB.FirstName = UpdatedUser.FirstName;
+        //     UserInDB.LastName = UpdatedUser.LastName;
+        //     UserInDB.Email = UpdatedUser.Email;
+        //     UserInDB.IsDoula = UpdatedUser.IsDoula;
+        //     UserInDB.IsMidwife = UpdatedUser.IsMidwife;
+        //     UserInDB.DueDate = UpdatedUser.DueDate;
+        //     UserInDB.PhoneNumber = UpdatedUser.PhoneNumber;
+        //     UserInDB.AddressStreet = UpdatedUser.AddressStreet;
+        //     UserInDB.AddressCity = UpdatedUser.AddressCity;
+        //     UserInDB.AddressState = UpdatedUser.AddressState;
+        //     UserInDB.AddressZipcode = UpdatedUser.AddressZipcode;
+        //     UserInDB.EmergencyFirstName = UpdatedUser.EmergencyFirstName;
+        //     UserInDB.EmergencyLastName = UpdatedUser.EmergencyLastName;
+        //     UserInDB.EmergencyNumber = UpdatedUser.EmergencyNumber;
+        //     UserInDB.SpouseFirstName = UpdatedUser.SpouseFirstName;
+        //     UserInDB.SpouseLastName = UpdatedUser.SpouseLastName;
+        //     UserInDB.SpouseNumber = UpdatedUser.SpouseNumber;
+        //     UserInDB.UpdatedAt = DateTime.Now;
+        //     await _context.SaveChangesAsync();
 
-            return Ok(await GetSingleUser(UserInDB.UserId));
-        }
+        //     return Ok(await GetSingleUser(UserInDB.UserId));
+        // }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserDoula(int id)
-        {
-            User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == HttpContext.Session.GetInt32("UUID"));
-            if (UserInDB == null)
-            {
-                return NotFound("No user found");
-            }
-            UserInDB.DoulaId = id;
-            UserInDB.UpdatedAt = DateTime.Now;
-            await _context.SaveChangesAsync();
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> UpdateUserDoula(int id)
+        // {
+        //     User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == HttpContext.Session.GetInt32("UUID"));
+        //     if (UserInDB == null)
+        //     {
+        //         return NotFound("No user found");
+        //     }
+        //     UserInDB.DoulaId = id;
+        //     UserInDB.UpdatedAt = DateTime.Now;
+        //     await _context.SaveChangesAsync();
 
-            return Ok(await GetSingleUser(UserInDB.UserId));
-        }
+        //     return Ok(await GetSingleUser(UserInDB.UserId));
+        // }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserMidwife(int id)
-        {
-            User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == HttpContext.Session.GetInt32("UUID"));
-            if (UserInDB == null)
-            {
-                return NotFound("No user found.");
-            }
-            UserInDB.MidwifeId = id;
-            UserInDB.UpdatedAt = DateTime.Now;
-            await _context.SaveChangesAsync();
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> UpdateUserMidwife(int id)
+        // {
+        //     User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == HttpContext.Session.GetInt32("UUID"));
+        //     if (UserInDB == null)
+        //     {
+        //         return NotFound("No user found.");
+        //     }
+        //     UserInDB.MidwifeId = id;
+        //     UserInDB.UpdatedAt = DateTime.Now;
+        //     await _context.SaveChangesAsync();
 
-            return Ok(await GetSingleUser(UserInDB.UserId));
-        }
+        //     return Ok(await GetSingleUser(UserInDB.UserId));
+        // }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)

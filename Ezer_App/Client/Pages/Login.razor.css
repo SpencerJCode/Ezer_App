@@ -1,0 +1,17 @@
+.form-control {
+  font-size: .8rem !important;
+  height: 30px;
+  padding: 0;
+}
+
+.form-floating {
+  font-size: .8rem;
+}
+
+label {
+  margin-top: -10px;
+}
+
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label {
+  margin-top: -5px;
+}
