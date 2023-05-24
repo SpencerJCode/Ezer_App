@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ezer_App.Server.Controllers
 {
@@ -34,6 +35,8 @@ namespace Ezer_App.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(User newUser)
         {
+            PasswordHasher<User> Hasher = new PasswordHasher<User>();   
+            newUser.Password = Hasher.HashPassword(newUser, newUser.Password); 
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
             User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
@@ -41,8 +44,8 @@ namespace Ezer_App.Server.Controllers
             { 
                 HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
                 HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
-                User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
-                User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
+                // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
+                // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
             }
             return Ok();
         }
