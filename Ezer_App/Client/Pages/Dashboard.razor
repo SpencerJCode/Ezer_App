@@ -1,5 +1,6 @@
 @page "/dashboard"
 @using System.Text.Json;
+@inject HttpClient Http
 
 
 <PageTitle>Home</PageTitle>
@@ -27,6 +28,7 @@
         var TimeDiff = DueDate - ConceptionDate;
         int? NumOfWeeks = TimeDiff.Days / 7;
         <p>You are @NumOfWeeks weeks along!</p>
+        @* <p>@serializedString</p> *@
       }
     </div>
   </div>
