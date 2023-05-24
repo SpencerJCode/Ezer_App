@@ -1,7 +1,7 @@
 @page "/caregiversearch"
+@inject IUserService UserService
 
-
-<PageTitle>Search for Caregivers</PageTitle>
+<PageTitle>Find an Ezer!</PageTitle>
 
 <div style="margin-left: 250px;">
   <h3 class="text-center display-6 text-ezer">Search for Caregivers</h3>
@@ -11,13 +11,21 @@
     <div class="input-group-append">
       <button class="btn btn-outline-secondary search-button" type="button">Button</button>
     </div>
+    <div class="search-result-container">
+        @foreach (User? user in UserService.Users)
+            {
+                <CaregiverCard Caregiver = user/>
+            }
+        </div>
   </div>
 </div>
 
-@* //navbar-logged-in
+@code {
 
-//side-menu
+    protected override async Task OnInitializedAsync()
+    {
+        await UserService.GetUsers();
+    }
 
-//sql call for all caregivers, form data filters with linq queries
-//filters -> distance, doula/midwife, experience, worldview
-//button on each account that sends to detail page *@
+
+}
