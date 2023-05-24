@@ -45,7 +45,7 @@ namespace Ezer_App.Client.Services.UserService
     }
     public async Task UpdateUser(User user)
     {
-      var result = await _http.PutAsJsonAsync($"api/user/{user.Id}", User);
+      var result = await _http.PutAsJsonAsync($"api/user/{user.UserId}", user);
       await SetUsers(result);
     }
   }

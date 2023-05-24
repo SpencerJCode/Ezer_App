@@ -1,6 +1,6 @@
 #pragma warning disable CS8618
-using Microsoft.EntityFrameworkCore;
-namespace Ezer_App.Shared;
+namespace Ezer_App.Server.Data;
+// namespace Ezer_App.Shared;
 
 public class MyContext : DbContext
 {

@@ -1,5 +1,6 @@
-global using Microsoft.EntityFrameworkCore;
 global using Ezer_App.Shared;
+global using Microsoft.EntityFrameworkCore;
+global using Ezer_App.Server.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);

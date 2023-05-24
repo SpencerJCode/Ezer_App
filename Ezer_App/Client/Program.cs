@@ -1,3 +1,5 @@
+global using Ezer_App.Client.Services.UserService;
+global using Ezer_App.Shared;
 using Ezer_App.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
