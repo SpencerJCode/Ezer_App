@@ -32,6 +32,23 @@ namespace Ezer_App.Server.Controllers
       return Ok(user);
     }
 
+    [HttpGet("weekdata/{dueDate}")]
+    public async Task<ActionResult<WeekData>> GetWeekData(DateTime dueDate)
+    {
+      // var DueDate = DateTime.Now.AddDays(20 * 7 + 1);
+      DateTime dueDateDate = (DateTime)dueDate;
+      // var DueDate = dueDateDate.AddDays(1);
+      var DueDate = dueDateDate;
+      var ConceptionDate = DateTime.Now;
+      var TimeDiff = DueDate - ConceptionDate;
+      int? NumOfWeeks = TimeDiff.Days / 7;
+      WeekData? weekData = await _context.TheBumpData.FirstOrDefaultAsync(w => w.WeekId == NumOfWeeks);
+      if(weekData == null) {
+        return NotFound("Week data not found.");
+      }
+      return Ok(weekData);
+    }
+
     [HttpPost("login")]
     public async Task<ActionResult<User>> Login(LoginUser userSubmission)
     {
@@ -58,7 +75,8 @@ namespace Ezer_App.Server.Controllers
       newUser.LastName = submittedUser.LastName;
       newUser.Email = submittedUser.Email;
       User? emailChecker = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
-      if(emailChecker != null) {
+      if (emailChecker != null)
+      {
         return NotFound("User already in database.");
       }
       PasswordHasher<User> Hasher = new PasswordHasher<User>();
@@ -70,10 +88,10 @@ namespace Ezer_App.Server.Controllers
       // if (loggedInUser != null)
       // {
 
-        // HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
-        // HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
-        // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
-        // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
+      // HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
+      // HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
+      // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
+      // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
       // }
       return Ok(loggedInUser);
     }

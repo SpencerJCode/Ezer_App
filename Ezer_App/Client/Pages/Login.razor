@@ -158,6 +158,7 @@
     {
       await localStorage.SetItemAsync("UUID", loggedInUser.UserId);
       await localStorage.SetItemAsync("UserName", loggedInUser.FirstName);
+      await localStorage.SetItemAsync("DueDate", loggedInUser.DueDate);
       StateHasChanged();
       NavigationManager.NavigateTo("dashboard", forceLoad: true);
     }
@@ -174,7 +175,6 @@
   protected override async Task OnInitializedAsync()
   {
     string currentUrl = NavigationManager.Uri;
-    Console.WriteLine(currentUrl);
     StateHasChanged();
   }
 

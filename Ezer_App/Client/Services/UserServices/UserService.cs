@@ -46,6 +46,19 @@ namespace Ezer_App.Client.Services.UserService
       var result = await _http.DeleteAsync($"api/user/{id}");
       // await SetUsers(result);
     }
+    public async Task<WeekData> GetWeekData(string dueDate)
+    {
+      Console.WriteLine("________________________IN THE USER SERVICE______________________________");
+      var result = await _http.GetFromJsonAsync<WeekData>($"api/user/weekdata/{dueDate}");
+      Console.WriteLine("________________________IN THE USER SERVICE BELOW VAR______________________________");
+      Console.WriteLine(result.WeekId);
+      if (result != null)
+      {
+        return result;
+      }
+      // throw new Exception("Week data not found!");
+      return null;
+    }
     public async Task<User> GetSingleUser(int id)
     {
       var result = await _http.GetFromJsonAsync<User>($"api/user/{id}");

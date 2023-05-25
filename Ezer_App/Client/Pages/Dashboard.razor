@@ -2,6 +2,7 @@
 @using System.Text.Json;
 @inject HttpClient Http;
 @inject ILocalStorageService localStorage
+@inject IUserService UserService
 
 
 <PageTitle>Home</PageTitle>
@@ -21,41 +22,45 @@
 
   </div>
 
-  <div class="card col-7 m-auto mt-4">
-    <div class="card-header text-center">
-      <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
-    </div>
-    <div class="card-body">
-      @{
-        var DueDate = DateTime.Now.AddDays(20 * 7 + 1);
-        var ConceptionDate = DateTime.Now;
-        var TimeDiff = DueDate - ConceptionDate;
-        int? NumOfWeeks = TimeDiff.Days / 7;
-        <p>You are @NumOfWeeks weeks along!</p>
-        @* <p>@serializedString</p> *@
-      }
-    </div>
-  </div>
+  @{
+    if (weekData != null)
+    {
+      <div class="card col-7 m-auto mt-4">
+        <div class="card-header text-center">
+          <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
+        </div>
+        <div class="card-body text-center">
+          <p>You are @weekData?.WeekId weeks along!</p>
+          <div class="baby-image-box">
+            <img src="@weekData.BabyImage" alt="Baby Size">
+          </div>
+          <p>@weekData.BabySize</p>
+          <p>For more info, visit <a href="@weekData.WeekLink">The Bump</a>.</p>
+        </div>
+      </div>
+    }
+  }
+
+
+
 </div>
-
-@* //session check
-
-//navbar-logged-in
-
-//side-menu
-
-//brief week update
-
-//conditional banner request to update account info on first load of dashboard *@
 
 @code {
   public int? UUID { get; set; }
   public string UserName { get; set; }
+  public string DueDate { get; set; }
+  public WeekData weekData { get; set; }
 
   protected override async Task OnInitializedAsync()
   {
     UUID = await localStorage.GetItemAsync<int>("UUID");
     UserName = await localStorage.GetItemAsync<string>("UserName");
+    DueDate = await localStorage.GetItemAsync<string>("DueDate");
+    if (DueDate != null)
+    {
+      var weekDataResult = await UserService.GetWeekData(DueDate);
+      weekData = weekDataResult;
+    }
   }
 
 }
