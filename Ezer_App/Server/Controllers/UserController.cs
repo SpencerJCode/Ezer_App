@@ -117,6 +117,8 @@ namespace Ezer_App.Server.Controllers
       PasswordHasher<User> Hasher = new PasswordHasher<User>();
       submittedUser.Password = Hasher.HashPassword(submittedUser, submittedUser.Password);
       newUser.Password = submittedUser.Password;
+      newUser.AddressState = submittedUser.AddressState;
+      newUser.AddressCity = submittedUser.AddressCity;
       _context.Users.Add(newUser);
       await _context.SaveChangesAsync();
       User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
