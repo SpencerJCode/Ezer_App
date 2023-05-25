@@ -14,12 +14,12 @@ namespace Ezer_App.Server.Controllers
       _context = context;
     }
 
-        [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUsers()
-        {
-            List<User> users = await _context.Users.ToListAsync();
-            return Ok(users);
-        }
+    [HttpGet]
+    public async Task<ActionResult<List<User>>> GetUsers()
+    {
+      List<User> users = await _context.Users.ToListAsync();
+      return Ok(users);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetSingleUser(int id)
@@ -43,10 +43,45 @@ namespace Ezer_App.Server.Controllers
       var TimeDiff = DueDate - ConceptionDate;
       int? NumOfWeeks = TimeDiff.Days / 7;
       WeekData? weekData = await _context.TheBumpData.FirstOrDefaultAsync(w => w.WeekId == NumOfWeeks);
-      if(weekData == null) {
+      if (weekData == null)
+      {
         return NotFound("Week data not found.");
       }
       return Ok(weekData);
+    }
+
+    [HttpPut("{userId}")]
+    public async Task<IActionResult> UpdateTheUser(int userId, User user)
+    {
+      Console.WriteLine("___________FROM CONTROLLER_______________");
+      Console.WriteLine(user.DueDate);
+      Console.WriteLine(userId);
+      User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+      if (UserInDB == null)
+      {
+        return NotFound("No user found");
+      }
+      UserInDB.FirstName = user.FirstName;
+      UserInDB.LastName = user.LastName;
+      UserInDB.Email = user.Email;
+      UserInDB.IsDoula = user.IsDoula;
+      UserInDB.IsMidwife = user.IsMidwife;
+      UserInDB.DueDate = user.DueDate;
+      UserInDB.PhoneNumber = user.PhoneNumber;
+      UserInDB.AddressStreet = user.AddressStreet;
+      UserInDB.AddressCity = user.AddressCity;
+      UserInDB.AddressState = user.AddressState;
+      UserInDB.AddressZipcode = user.AddressZipcode;
+      UserInDB.EmergencyFirstName = user.EmergencyFirstName;
+      UserInDB.EmergencyLastName = user.EmergencyLastName;
+      UserInDB.EmergencyNumber = user.EmergencyNumber;
+      UserInDB.SpouseFirstName = user.SpouseFirstName;
+      UserInDB.SpouseLastName = user.SpouseLastName;
+      UserInDB.SpouseNumber = user.SpouseNumber;
+      UserInDB.UpdatedAt = DateTime.Now;
+      await _context.SaveChangesAsync();
+
+      return Ok();
     }
 
     [HttpPost("login")]
@@ -66,7 +101,7 @@ namespace Ezer_App.Server.Controllers
       return Ok(userInDb);
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     public async Task<ActionResult<User>> CreateNewUser(User submittedUser)
     {
 
@@ -96,36 +131,7 @@ namespace Ezer_App.Server.Controllers
       return Ok(loggedInUser);
     }
 
-    // [HttpPut("{id}")]
-    // public async Task<IActionResult> UpdateUser(User UpdatedUser, int id)
-    // {
-    //     User? UserInDB = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-    //     if (UserInDB == null)
-    //     {
-    //         return NotFound("No user found");
-    //     }
-    //     UserInDB.FirstName = UpdatedUser.FirstName;
-    //     UserInDB.LastName = UpdatedUser.LastName;
-    //     UserInDB.Email = UpdatedUser.Email;
-    //     UserInDB.IsDoula = UpdatedUser.IsDoula;
-    //     UserInDB.IsMidwife = UpdatedUser.IsMidwife;
-    //     UserInDB.DueDate = UpdatedUser.DueDate;
-    //     UserInDB.PhoneNumber = UpdatedUser.PhoneNumber;
-    //     UserInDB.AddressStreet = UpdatedUser.AddressStreet;
-    //     UserInDB.AddressCity = UpdatedUser.AddressCity;
-    //     UserInDB.AddressState = UpdatedUser.AddressState;
-    //     UserInDB.AddressZipcode = UpdatedUser.AddressZipcode;
-    //     UserInDB.EmergencyFirstName = UpdatedUser.EmergencyFirstName;
-    //     UserInDB.EmergencyLastName = UpdatedUser.EmergencyLastName;
-    //     UserInDB.EmergencyNumber = UpdatedUser.EmergencyNumber;
-    //     UserInDB.SpouseFirstName = UpdatedUser.SpouseFirstName;
-    //     UserInDB.SpouseLastName = UpdatedUser.SpouseLastName;
-    //     UserInDB.SpouseNumber = UpdatedUser.SpouseNumber;
-    //     UserInDB.UpdatedAt = DateTime.Now;
-    //     await _context.SaveChangesAsync();
 
-    //     return Ok(await GetSingleUser(UserInDB.UserId));
-    // }
 
     // [HttpPut("{id}")]
     // public async Task<IActionResult> UpdateUserDoula(int id)

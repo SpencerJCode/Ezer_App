@@ -1,4 +1,7 @@
 @page "/myaccount"
+@inject ILocalStorageService localStorage
+@inject IUserService UserService
+@inject NavigationManager NavigationManager
 
 <PageTitle>My Account</PageTitle>
 
@@ -7,62 +10,42 @@
   <div class="card-1 col-11 m-auto mt-2 box-shadow">
     <div class="card-body">
 
-      <div class="top d-flex justify-content-center gap-3">
-
-
-        <div class="card box-shadow col-3">
-          <div class="card-header card-header-2 text-center text-ezer">
-            <h5>I am...</h5>
+      <EditForm Model="@currentUser" OnSubmit="@HandleSubmit">
+        <div class="top d-flex justify-content-center gap-3">
+          <div class="card box-shadow col-3">
+            <div class="card-header card-header-2 text-center text-ezer">
+              <h5>I am...</h5>
+            </div>
+            <div class="card-body p-2" style="padding-left: 15px !important;">
+              <div class="form-check">
+                <InputCheckbox class="form-check-input" id="IsMidwife" @bind-Value="currentUser.IsMidwife" />
+                <label class="form-check-label" for="IsMidwife">
+                  A Midwife
+                </label>
+              </div>
+              <div class="form-check">
+                <InputCheckbox class="form-check-input" id="IsDoula" @bind-Value="currentUser.IsDoula" />
+                <label class="form-check-label" for="IsDoula">
+                  A Doula
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="card-body p-2" style="padding-left: 15px !important;">
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="true" id="IsMidwife">
-              <label class="form-check-label" for="IsMidwife">
-                A Midwife
-              </label>
+          <div class="card box-shadow col-3">
+            <div class="card-header card-header-2 text-center text-ezer">
+              <h5>My Caregiver(s)</h5>
             </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="true" id="IsDoula">
-              <label class="form-check-label" for="IsDoula">
-                A Doula
-              </label>
+            <div class="card-body p-2">
+              <NavLink class="nav-link text-center" href="caregiversearch">
+                <span class="oi oi-people text-ezer" aria-hidden="true"></span> Find Doulas
+              </NavLink>
+              <NavLink class="nav-link  text-center" href="caregiversearch">
+                <span class="oi oi-people text-ezer" aria-hidden="true"></span> Find Midwives
+              </NavLink>
             </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Neither of the above
-              </label>
-            </div>
-
-
           </div>
         </div>
-
-        <div class="card box-shadow col-3">
-          <div class="card-header card-header-2 text-center text-ezer">
-            <h5>My Caregiver(s)</h5>
-          </div>
-          <div class="card-body p-2">
-            <NavLink class="nav-link text-center" href="caregiversearch">
-              <span class="oi oi-people text-ezer" aria-hidden="true"></span> Find Doulas
-            </NavLink>
-            <NavLink class="nav-link  text-center" href="caregiversearch">
-              <span class="oi oi-people text-ezer" aria-hidden="true"></span> Find Midwives
-            </NavLink>
-          </div>
-        </div>
-      </div>
-
-      <div class="middle mt-2">
-        @* <EditForm>
-        <label for="firstname">First Name</label>
-        <InputText id="firstname" class="form-control"></InputText>
-        </EditForm> *@
-        <form action="">
-
+        <div class="middle mt-2">
           <div class="middle-forms d-flex gap-2 justify-content-around">
             <div class="card box-shadow col-3 mt-2">
               <div class="card-header card-header-2 text-center text-ezer">
@@ -70,31 +53,29 @@
               </div>
               <div class="card-body">
                 <div class="form-floating">
-                  <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number:"
-                    class="form-control">
+                  <InputText name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number:" class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.PhoneNumber" />
                   <label for="PhoneNumber">Phone Number:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="AddressStreet" id="AddressStreet" placeholder="Street Address:"
-                    class="form-control">
+                  <InputText name="AddressStreet" id="AddressStreet" placeholder="Street Address:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.AddressStreet" />
                   <label for="AddressStreet">Street Address:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="AddressCity " id="AddressCity" placeholder="City:" class="form-control">
+                  <InputText name="AddressCity " id="AddressCity" placeholder="City:" class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.AddressCity" />
                   <label for="AddressCity">City:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="AddressState" id="AddressState" placeholder="State:" class="form-control">
+                  <InputText name="AddressState" id="AddressState" placeholder="State:" class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.AddressState" />
                   <label for="AddressState">State:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="AddressZipcode" id="AddressZipcode" placeholder="Zip Code:"
-                    class="form-control">
+                  <InputText name="AddressZipcode" id="AddressZipcode" placeholder="Zip Code:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.AddressZipcode" />
                   <label for="AddressZipcode">Zip Code:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="DueDate" id="DueDate" placeholder="Your Due Date:"
-                    class="form-control">
+                  <InputDate name="DueDate" id="DueDate" placeholder="Your Due Date:" class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.DueDate"/>
                   <label for="DueDate">Your Due Date:</label>
                 </div>
               </div>
@@ -105,64 +86,70 @@
               </div>
               <div class="card-body">
                 <div class="form-floating">
-                  <input type="text" name="SpouseFirstName" id="SpouseFirstName" placeholder="First Name:"
-                    class="form-control">
+                  <InputText name="SpouseFirstName" id="SpouseFirstName" placeholder="First Name:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.SpouseFirstName" />
                   <label for="SpouseFirstName">First Name:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="SpouseLastName " id="SpouseLastName" placeholder="Last Name:"
-                    class="form-control">
+                  <InputText name="SpouseLastName " id="SpouseLastName" placeholder="Last Name:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.SpouseLastName" />
                   <label for="SpouseLastName">Last Name:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="SpouseNumber" id="SpouseNumber" placeholder="Phone Number:"
-                    class="form-control">
+                  <InputText name="SpouseNumber" id="SpouseNumber" placeholder="Phone Number:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.SpouseNumber" />
                   <label for="SpouseNumber">Phone Number:</label>
                 </div>
               </div>
             </div>
-
             <div class="card box-shadow col-3 mt-2">
               <div class="card-header card-header-2 text-center text-ezer">
                 <h5>Emergency Info</h5>
               </div>
               <div class="card-body">
                 <div class="form-floating">
-                  <input type="text" name="EmergencyFirstName" id="EmergencyFirstName" placeholder="First Name:"
-                    class="form-control">
+                  <InputText name="EmergencyFirstName" id="EmergencyFirstName" placeholder="First Name:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.EmergencyFirstName" />
                   <label for="EmergencyFirstName">First Name:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="EmergencyLastName " id="EmergencyLastName" placeholder="Last Name:"
-                    class="form-control">
+                  <InputText name="EmergencyLastName " id="EmergencyLastName" placeholder="Last Name:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.EmergencyLastName" />
                   <label for="EmergencyLastName">Last Name:</label>
                 </div>
                 <div class="form-floating mt-3">
-                  <input type="text" name="EmergencyNumber" id="EmergencyNumber" placeholder="Phone Number:"
-                    class="form-control">
+                  <InputText name="EmergencyNumber" id="EmergencyNumber" placeholder="Phone Number:"
+                    class="form-control" style="font-size: .8rem; height: 45px" @bind-Value="currentUser.EmergencyNumber" />
                   <label for="EmergencyNumber">Phone Number:</label>
                 </div>
               </div>
             </div>
-
           </div>
-
           <div class="d-flex justify-content-center">
-            <input type="submit" value="Save Changes" class="btn btn-primary mt-3 box-shadow">
+            <button type="submit" class="btn btn-primary mt-3 box-shadow">Save Changes</button>
           </div>
-
-        </form>
-      </div>
+        </div>
+      </EditForm>
 
     </div>
   </div>
 
 </div>
 
-@* //navbar-logged-in
+@code {
+  User currentUser { get;set; } = new User();
 
-//side-menu
+  public int UUID { get;set; }
 
-//account form
-//conditional form load - doula
-//conditional form load - midwife *@
+  protected override async Task OnInitializedAsync()
+  {
+    UUID = await localStorage.GetItemAsync<int>("UUID");
+    currentUser = await UserService.GetSingleUser(UUID);
+  }
+
+  private async Task HandleSubmit()
+  {
+    await UserService.UpdateUser((User)currentUser);
+    @* NavigationManager.NavigateTo("dashboard"); *@
+  }
+}

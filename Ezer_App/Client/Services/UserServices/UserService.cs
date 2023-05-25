@@ -18,7 +18,7 @@ namespace Ezer_App.Client.Services.UserService
     public User? User { get; set; } = new User();
     public async Task<User> CreateUser(User user)
     {
-      var result = await _http.PostAsJsonAsync("api/user", user);
+      var result = await _http.PostAsJsonAsync("api/user/create", user);
       if (result.IsSuccessStatusCode) {
         User? createdUser = await SetUser(result);
         return createdUser;
@@ -48,23 +48,20 @@ namespace Ezer_App.Client.Services.UserService
     }
     public async Task<WeekData> GetWeekData(string dueDate)
     {
-      Console.WriteLine("________________________IN THE USER SERVICE______________________________");
       var result = await _http.GetFromJsonAsync<WeekData>($"api/user/weekdata/{dueDate}");
-      Console.WriteLine("________________________IN THE USER SERVICE BELOW VAR______________________________");
-      Console.WriteLine(result.WeekId);
       if (result != null)
       {
         return result;
       }
-      // throw new Exception("Week data not found!");
       return null;
     }
     public async Task<User> GetSingleUser(int id)
     {
+      Console.WriteLine("__________GET USER___________");
       var result = await _http.GetFromJsonAsync<User>($"api/user/{id}");
       if (result != null)
         return result;
-      throw new Exception("User not found!");
+      return null;
     }
     public async Task GetUsers()
     {
@@ -80,8 +77,32 @@ namespace Ezer_App.Client.Services.UserService
     }
     public async Task UpdateUser(User user)
     {
-      var result = await _http.PutAsJsonAsync($"api/user/{user.UserId}", user);
-      // await SetUsers(result);
+      // Console.WriteLine("_______FROM USER SERVICE ABOVE var result______");
+      Console.WriteLine(user.UserId);
+      Console.WriteLine(user.AddressCity);
+      Console.WriteLine(user.AddressState);
+      Console.WriteLine(user.AddressStreet);
+      Console.WriteLine(user.AddressZipcode);
+      Console.WriteLine(user.DueDate);
+      Console.WriteLine(user.EmergencyFirstName);
+      Console.WriteLine(user.EmergencyLastName);
+      Console.WriteLine(user.EmergencyNumber);
+      Console.WriteLine(user.IsDoula);
+      Console.WriteLine(user.IsMidwife);
+      Console.WriteLine(user.PhoneNumber);
+      Console.WriteLine(user.SpouseFirstName);
+      Console.WriteLine(user.SpouseLastName);
+      Console.WriteLine(user.SpouseNumber);
+      var result = await _http.PutAsJsonAsync<User>($"api/user/{user.UserId}", user);
+      if (result.IsSuccessStatusCode) {
+        // Console.WriteLine("Result below");
+        // Console.WriteLine(result);
+        // User? updatedUser = await SetUser(result);
+        // Console.WriteLine("updatedUser below");
+        // Console.WriteLine(updatedUser.DueDate);
+        // return updatedUser;
+      }
+      // return null;
     }
   }
 }
