@@ -16,28 +16,35 @@
           <DataAnnotationsValidator />
 
           <div class="form-floating">
-            <InputText id="FirstName" @bind-Value="newUser.FirstName" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px" />
+            <InputText id="FirstName" @bind-Value="newUser.FirstName" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
             <label for="FirstName">First Name:</label>
             <ValidationMessage For="() => newUser.FirstName" />
           </div>
           <div class="form-floating mt-3">
-            <InputText id="LastName" @bind-Value="newUser.LastName" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px"/>
+            <InputText id="LastName" @bind-Value="newUser.LastName" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
             <label for="LastName">Last Name:</label>
             <ValidationMessage For="() => newUser.LastName" />
           </div>
           <div class="form-floating mt-3">
-            <InputText id="Email" @bind-Value="newUser.Email" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px"/>
+            <InputText id="Email" @bind-Value="newUser.Email" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
             <label for="Email">Email:</label>
             <ValidationMessage For="() => newUser.Email" />
+            <div class="validation-error mb-3" style="color: #eb3135;">
+              @userExists
+            </div>
           </div>
           <div class="form-floating mt-3">
-            <InputText id="Password" @bind-Value="newUser.Password" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px"/>
+            <InputText id="Password" @bind-Value="newUser.Password" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
             <label for="Password">Password:</label>
             <ValidationMessage For="() => newUser.Password" />
           </div>
           <div class="form-floating mt-3">
-            <InputText id="ConfirmPassword" @bind-Value="newUser.ConfirmPassword" class="form-control"
-              placeholder="F" style="font-size: .8rem; height: 45px"/>
+            <InputText id="ConfirmPassword" @bind-Value="newUser.ConfirmPassword" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
             <label for="ConfirmPassword">Confirm Password:</label>
             <ValidationMessage For="() => newUser.ConfirmPassword" />
           </div>
@@ -87,17 +94,26 @@
       </div>
       <div class="card-body p-4">
 
-        @* <div class="form-floating">
-        <InputText for="LogEmail" placeholder="Email:" @bind-Value="loginUser.LogEmail" />
-        <label id="LogEmail">Email:</label>
-        </div>
+        <EditForm Model="@loginUser" OnValidSubmit="@LoginSubmit">
+          <DataAnnotationsValidator />
+          <div class="validation-error mb-3" style="color: #eb3135;">
+            @notInDB
+          </div>
 
-        <div class="form-floating mt-3">
-        <InputText for="LogPassword" placeholder="Password:" @bind-Value="loginUser.LogPassword" />
-        <label id="LogPassword">Password:</label>
-        </div> *@
-
-        @* <InputText type="submit" value="Login" class="mt-3 btn btn-primary" /> *@
+          <div class="form-floating">
+            <InputText for="LogEmail" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px"
+            @bind-Value="loginUser.LogEmail" />
+            <label id="LogEmail">Email:</label>
+            <ValidationMessage For="() => loginUser.LogEmail" />
+          </div>
+          <div class="form-floating mt-3">
+            <InputText for="LogPassword" class="form-control" placeholder="F" style="font-size: .8rem; height: 45px"
+            @bind-Value="loginUser.LogPassword" />
+            <label id="LogPassword">Password:</label>
+            <ValidationMessage For="() => loginUser.LogPassword" />
+          </div>
+          <button type="submit" class="mt-3 btn btn-primary">Login</button>
+        </EditForm>
 
       </div>
     </div>
@@ -109,26 +125,57 @@
   @* modal functions *@
   [Parameter]
   public EventCallback<bool> OnClose { get; set; }
-
   User? newUser = new User();
+  LoginUser? loginUser = new LoginUser();
 
   [Parameter]
   public string ModalBody { get; set; } = "This is the modal body.";
-
-  public User? createdUser { get;set; }
+  public string userExists { get; set; } = "";
+  public string notInDB { get; set; } = "";
+  public User? createdUser { get; set; }
+  User? loggedInUser { get; set; }
   private async Task ModalAgree()
   {
-    @* Console.WriteLine(newUser.FirstName); *@
     DisclaimerModelOpen = false;
     createdUser = await UserService.CreateUser(newUser);
-    await localStorage.SetItemAsync("UUID", createdUser.UserId);
-    await localStorage.SetItemAsync("UserName", createdUser.FirstName);
-    NavigationManager.NavigateTo("dashboard");
+    if (createdUser != null)
+    {
+      await localStorage.SetItemAsync("UUID", createdUser.UserId);
+      await localStorage.SetItemAsync("UserName", createdUser.FirstName);
+      StateHasChanged();
+      NavigationManager.NavigateTo("dashboard", forceLoad: true);
+    }
+    else
+    {
+      userExists = "Email is already registered.";
+      StateHasChanged();
+    }
   }
-
+  private async Task LoginSubmit()
+  {
+    loggedInUser = await UserService.LoginUser(loginUser);
+    if (loggedInUser != null)
+    {
+      await localStorage.SetItemAsync("UUID", loggedInUser.UserId);
+      await localStorage.SetItemAsync("UserName", loggedInUser.FirstName);
+      await localStorage.SetItemAsync("DueDate", loggedInUser.DueDate);
+      StateHasChanged();
+      NavigationManager.NavigateTo("dashboard", forceLoad: true);
+    }
+    else
+    {
+      notInDB = "Invalid Email/Password.";
+      StateHasChanged();
+    }
+  }
   private void ModalCancel()
   {
     DisclaimerModelOpen = false;
+  }
+  protected override async Task OnInitializedAsync()
+  {
+    string currentUrl = NavigationManager.Uri;
+    StateHasChanged();
   }
 
 
@@ -136,15 +183,11 @@
 
   public bool DisclaimerModelOpen { get; set; }
 
-  LoginUser? loginUser = new LoginUser();
+
 
   private void OnDisclaimerAgree(bool accepted)
   {
     DisclaimerModelOpen = false;
-    @* async Task HandleSubmit()
-{
-await UserService.CreateUser(user);
-} *@
     StateHasChanged();
   }
 

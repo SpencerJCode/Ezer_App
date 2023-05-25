@@ -1,21 +1,24 @@
 @page "/mypregnancy"
+@inject ILocalStorageService localStorage
+@inject IUserService UserService
 
 <div class="mypregnancy-container" style="margin-left: 250px;">
-  <div class="card col-7 m-auto mt-4">
-    <div class="card-header text-center">
-      <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
-    </div>
-    <div class="card-body">
-      @{
-        var DueDate = DateTime.Now.AddDays(20 * 7 + 1);
-        var ConceptionDate = DateTime.Now;
-        var TimeDiff = DueDate - ConceptionDate;
-        int? NumOfWeeks = TimeDiff.Days / 7;
-        <p>You are @NumOfWeeks weeks along!</p>
-      }
-    </div>
-  </div>
-
+  @{
+    if (weekData != null)
+    {
+      <div class="card col-7 m-auto mt-4">
+        <div class="card-header text-center">
+          <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
+        </div>
+        <div class="card-body">
+          <p>You are @weekData?.WeekId weeks along!</p>
+          <img src="@weekData.BabyImage" alt="Baby Size">
+          <p>@weekData.BabySize</p>
+          <p>@weekData.WeekLink</p>
+        </div>
+      </div>
+    }
+  }
   <div class="card col-3 m-auto mt-3">
     <div class="card">
       <div class="card-body">
@@ -25,17 +28,31 @@
           <label for="DueDate">Your Due Date:</label>
         </div>
         <div class="d-flex justify-content-center">
-            <input type="submit" value="Update" class="btn btn-primary mt-3 box-shadow">
-          </div>
+          <input type="submit" value="Update" class="btn btn-primary mt-3 box-shadow">
+        </div>
       </div>
-
     </div>
   </div>
-
 </div>
+
 
 @* //navbar-logged-in
 
 //side-menu
 
 //pregnancy information form *@
+
+@code {
+  public string DueDate { get; set; }
+  public WeekData weekData { get; set; }
+
+  protected override async Task OnInitializedAsync()
+  {
+    DueDate = await localStorage.GetItemAsync<string>("DueDate");
+    if (DueDate != null)
+    {
+      var weekDataResult = await UserService.GetWeekData(DueDate);
+      weekData = weekDataResult;
+    }
+  }
+}

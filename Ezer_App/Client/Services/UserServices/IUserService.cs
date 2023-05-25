@@ -6,8 +6,10 @@ namespace Ezer_App.Client.Services.UserService
     List<User> Users { get; set; }
     Task GetUsers();
     Task<User> GetSingleUser(int id);
+    Task<WeekData> GetWeekData(string dueDate);
     // Task CreateUser(User user);
     Task<User> CreateUser(User user);
+    Task<User> LoginUser(LoginUser userSubmission);
     Task UpdateUser(User user);
     Task DeleteUser(int id);
   }

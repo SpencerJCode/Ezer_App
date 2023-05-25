@@ -1,13 +1,28 @@
 ﻿@inherits LayoutComponentBase
+@inject ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
 
 <div class="page d-flex flex-column">
-    <NavbarNotLoggedIn />
 
-    @* Need to add in if UserId in Session, then render: *@
+    @{
+        if (UUID != 0)
+        {
+            <NavbarLoggedIn />
+            @if (currentUrl != "http://localhost:5140/" & currentUrl != "http://localhost:5140/login" & currentUrl != "http://localhost:5140/about" & currentUrl != "http://localhost:5140/contact")
+            {
+                <div class="sidebar box-shadow">
+                    <NavMenu />
+                </div>
+            }
+        }
+        else
+        {
+            <NavbarNotLoggedIn />
+        }
 
-    <div class="sidebar box-shadow">
-        <NavMenu />
-    </div>
+
+    }
+
 
     <main>
         <article class="content px-4">
@@ -16,3 +31,16 @@
     </main>
 
 </div>
+
+@code {
+    public int? UUID { get; set; }
+    public bool loggedIn { get; set; }
+    public string currentUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        UUID = await localStorage.GetItemAsync<int>("UUID");
+        currentUrl = NavigationManager.Uri;
+    }
+
+}
