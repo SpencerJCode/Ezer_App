@@ -1,9 +1,11 @@
 <div class="card">
     <div class="card-header">@Caregiver.FirstName @Caregiver.LastName</div>
     <div class="card-body">
+        @{imgsrc = "images/" + @Caregiver.FirstName + ".png";}
         <img src="@imgsrc" class="search-image">
-        <h3>@Caregiver.AddressCity</h3>
-        <h5>Distance: 50m</h5>
+        <br>
+        <h6>Lives in:</h6>
+        <h4>@Caregiver.AddressCity</h4>
         <p>@Caregiver.Email</p>
         <button class="nav-link button" href="/caregiverdetails/@Caregiver.UserId">View</button>
     </div>
@@ -11,7 +13,9 @@
 
 @code {
     // Demonstrates how a parent component can supply parameters
-    public string imgsrc = "images/blank.png";
+    public string imgsrc {get;set;} = "";
+    
     [Parameter]
-    public User Caregiver { get; set; }
+    public User? Caregiver { get; set; }
+
 }

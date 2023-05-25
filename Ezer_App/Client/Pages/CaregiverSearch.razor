@@ -5,26 +5,38 @@
 
 <div style="margin-left: 250px;">
   <h3 class="text-center display-6 text-ezer">Search for Caregivers</h3>
+  <p class="text-center display-9 text-ezer">Input a search radius below</p>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2">
+    <input type="text" class="form-control" @bind-value="SearchState" placeholder="Please enter a state name" aria-label="Name" aria-describedby="basic-addon2">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary search-button" type="button">Button</button>
+      <button class="btn btn-outline-secondary search-button" type="button" onclick="@SetFilter">Search</button>
     </div>
   </div>
   <div class="search-result-container">
-    @foreach (User? user in UserService.Users)
-    {
-      <CaregiverCard Caregiver=user />
+    @{if (FilteredUsers.Count() > 0){
+    @foreach (User? user in FilteredUsers)
+      {
+      <CaregiverCard Caregiver=user/>
+      }
+    } else {<h3>No caregivers match your search criteria.</h3>}
     }
   </div>
 </div>
 
 @code {
+
+  public string? SearchState { get; set; }
   User Caregiver { get; set; } = new User();
+  List<User> FilteredUsers { get; set; }= new List<User>();
+
+  private void SetFilter()
+  {
+    FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState).ToList();
+  }
+
   protected override async Task OnInitializedAsync()
   {
     await UserService.GetUsers();
   }
-
 
 }
