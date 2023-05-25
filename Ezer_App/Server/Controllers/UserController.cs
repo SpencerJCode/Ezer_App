@@ -84,6 +84,7 @@ namespace Ezer_App.Server.Controllers
       return Ok();
     }
 
+
     [HttpPost("login")]
     public async Task<ActionResult<User>> Login(LoginUser userSubmission)
     {

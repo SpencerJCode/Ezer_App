@@ -43,10 +43,9 @@ namespace Ezer_App.Shared
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
     public int DoulaId { get; set; } = 0;
     public int MidwifeId { get; set; } = 0;
-
-    [NotMapped]
-    [Compare("Password")]
-    [DataType(DataType.Password)]
-    public string ConfirmPassword { get; set; }
+    // [NotMapped]
+    // [Compare("Password")]
+    // [DataType(DataType.Password)]
+    // public string ConfirmPassword { get; set; }
   }
 }
