@@ -33,7 +33,7 @@ namespace Ezer_App.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateNewUser(User submittedUser)
+        public async Task<ActionResult<User>> CreateNewUser(User submittedUser)
         {
 
             User? newUser = new User();
@@ -48,12 +48,15 @@ namespace Ezer_App.Server.Controllers
             User? loggedInUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
             if (loggedInUser != null)
             { 
+
                 // HttpContext.Session.SetInt32("UUID", loggedInUser.UserId);
                 // HttpContext.Session.SetString("UserName", loggedInUser.FirstName);
                 // User? UserDoula = await _context.Users.FirstOrDefaultAsync(u => u.DoulaId == loggedInUser.DoulaId);
                 // User? UserMidwife = await _context.Users.FirstOrDefaultAsync(u => u.MidwifeId == loggedInUser.MidwifeId);
             }
-            return Ok();
+            // Console.WriteLine("______________________________________________");
+            // Console.WriteLine(loggedInUser.FirstName);
+            return Ok(loggedInUser);
         }
 
         // [HttpPut("{id}")]

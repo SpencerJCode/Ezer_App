@@ -1,6 +1,7 @@
 global using Ezer_App.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using Ezer_App.Server.Data;
+global using Blazored.LocalStorage;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddRazorPages();
 builder.Services.AddSession(options => {
     options.Cookie.Name = ".Ezer_App.Session";

@@ -1,6 +1,7 @@
 @page "/login"
 @inject IUserService UserService
 @inject NavigationManager NavigationManager
+@inject ILocalStorageService localStorage
 
 <div class="logreg-container d-flex justify-content-center gap-5 mt-4">
 
@@ -114,11 +115,14 @@
   [Parameter]
   public string ModalBody { get; set; } = "This is the modal body.";
 
+  public User? createdUser { get;set; }
   private async Task ModalAgree()
   {
     @* Console.WriteLine(newUser.FirstName); *@
     DisclaimerModelOpen = false;
-    await UserService.CreateUser(newUser);
+    createdUser = await UserService.CreateUser(newUser);
+    await localStorage.SetItemAsync("UUID", createdUser.UserId);
+    await localStorage.SetItemAsync("UserName", createdUser.FirstName);
     NavigationManager.NavigateTo("dashboard");
   }
 
