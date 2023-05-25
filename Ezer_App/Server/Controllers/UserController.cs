@@ -15,7 +15,7 @@ namespace Ezer_App.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<ActionResult<List<User>>> GetUsers()
         {
             List<User> users = await _context.Users.ToListAsync();
             return Ok(users);

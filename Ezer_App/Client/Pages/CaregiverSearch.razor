@@ -6,26 +6,25 @@
 <div style="margin-left: 250px;">
   <h3 class="text-center display-6 text-ezer">Search for Caregivers</h3>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Name" aria-label="Name"
-      aria-describedby="basic-addon2">
+    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary search-button" type="button">Button</button>
     </div>
-    <div class="search-result-container">
-        @foreach (User? user in UserService.Users)
-            {
-                <CaregiverCard Caregiver = user/>
-            }
-        </div>
+  </div>
+  <div class="search-result-container">
+    @foreach (User? user in UserService.Users)
+    {
+      <CaregiverCard Caregiver=user />
+    }
   </div>
 </div>
 
 @code {
-
-    protected override async Task OnInitializedAsync()
-    {
-        await UserService.GetUsers();
-    }
+  User Caregiver { get; set; } = new User();
+  protected override async Task OnInitializedAsync()
+  {
+    await UserService.GetUsers();
+  }
 
 
 }

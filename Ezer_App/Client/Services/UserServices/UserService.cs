@@ -41,9 +41,15 @@ namespace Ezer_App.Client.Services.UserService
     }
     public async Task GetUsers()
     {
-      var result = await _http.GetFromJsonAsync<List<User>>("api/user");
-      if (result != null)
-        Users = result;
+      Users = await _http.GetFromJsonAsync<List<User>>("api/user");
+      Console.WriteLine("You're at the controller after the GetFromJson!");
+      Console.WriteLine("==========================");
+      // Users = result;
+    }
+    private async Task<List<User>> SetUsers(HttpResponseMessage result)
+    {
+      Users = await result.Content.ReadFromJsonAsync<List<User>>();
+      return Users;
     }
     public async Task UpdateUser(User user)
     {

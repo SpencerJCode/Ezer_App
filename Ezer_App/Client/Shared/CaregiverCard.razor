@@ -1,17 +1,17 @@
-@* //receives an object called "Caregiver"
 <div class="card">
-    <div class="card-header">@Caregiver.Name</div>
+    <div class="card-header">@Caregiver.FirstName @Caregiver.LastName</div>
     <div class="card-body">
-        <img url="@Caregiver.ImageURL" class="search-image">
-        <h3>@Caregiver.FirstName @Caregiver.LastName</h3>
-        <h5>Distance: @Caregiver.Distance</h5>
-        <p>@Caregiver.Description[0,21]</p>
-        <button class="nav-link" href="/caregiverdetails/@Caregiver.Id">View</button>
+        <img src="@imgsrc" class="search-image">
+        <h3>@Caregiver.AddressCity</h3>
+        <h5>Distance: 50m</h5>
+        <p>@Caregiver.Email</p>
+        <button class="nav-link button" href="/caregiverdetails/@Caregiver.UserId">View</button>
     </div>
 </div>
 
 @code {
     // Demonstrates how a parent component can supply parameters
+    public string imgsrc = "images/blank.png";
     [Parameter]
     public User Caregiver { get; set; }
-} *@
+}
