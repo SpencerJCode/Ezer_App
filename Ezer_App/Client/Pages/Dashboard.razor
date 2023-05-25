@@ -49,12 +49,12 @@
 //conditional banner request to update account info on first load of dashboard *@
 
 @code {
-  public string UUID { get; set; }
+  public int? UUID { get; set; }
   public string UserName { get; set; }
 
   protected override async Task OnInitializedAsync()
   {
-    UUID = await localStorage.GetItemAsync<string>("UUID");
+    UUID = await localStorage.GetItemAsync<int>("UUID");
     UserName = await localStorage.GetItemAsync<string>("UserName");
   }
 

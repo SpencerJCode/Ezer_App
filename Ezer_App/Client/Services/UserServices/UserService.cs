@@ -15,12 +15,26 @@ namespace Ezer_App.Client.Services.UserService
       _navigationManager = navigationManager;
     }
     public List<User> Users { get; set; } = new List<User>();
-    public User? User { get;set; } = new User();
+    public User? User { get; set; } = new User();
     public async Task<User> CreateUser(User user)
     {
       var result = await _http.PostAsJsonAsync("api/user", user);
-      User? createdUser = await SetUser(result);
-      return createdUser;
+      if (result.IsSuccessStatusCode) {
+        User? createdUser = await SetUser(result);
+        return createdUser;
+      }
+      return null;
+    }
+    public async Task<User> LoginUser(LoginUser userSubmission)
+    {
+      var result = await _http.PostAsJsonAsync("api/user/login", userSubmission);
+      Console.WriteLine(result.IsSuccessStatusCode);
+      if (result.IsSuccessStatusCode)
+      {
+        User? loggedInUser = await SetUser(result);
+        return loggedInUser;
+      }
+      return null;
     }
     private async Task<User> SetUser(HttpResponseMessage result)
     {

@@ -1,0 +1,57 @@
+@inject ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+<div class="navbar-body p-2 box-shadow">
+
+  <div class="navbar-content col-7 m-auto d-flex align-items-center justify-content-between">
+    <a href="/" class="site-title d-flex gap-3" onclick="@HomePage">
+      <img src="images/ezer-logo.png" alt="Ezer Hand" class="mt-1">
+      <div class="site-title">
+        <h1>Ezer App</h1>
+        <h3>Helping You Help</h3>
+      </div>
+    </a>
+    <div class="navlinks d-flex gap-3 align-items-center">
+      <a href="about" onclick="@About">About</a>
+      <p>|</p>
+      <a href="contact" onclick="@Contact">Contact</a>
+      <p>|</p>
+      <a href="dashboard" onclick="@Dashboard">Dashboard</a>
+      <p>|</p>
+      <button class="btn btn-danger" style="padding: 5px 10px" onclick="@Logout">Logout</button>
+    </div>
+  </div>
+
+</div>
+
+@code {
+
+  public int? UUID { get; set; }
+
+  private async Task Logout()
+  {
+    await localStorage.ClearAsync();
+    UUID = 0;
+    StateHasChanged();
+    NavigationManager.NavigateTo("/", forceLoad: true);
+  }
+
+  private async Task HomePage()
+  {
+    NavigationManager.NavigateTo("/", forceLoad: true);
+  }
+  private async Task Dashboard()
+  {
+    NavigationManager.NavigateTo("dashboard", forceLoad: true);
+  }
+  private async Task About()
+  {
+    NavigationManager.NavigateTo("about", forceLoad: true);
+  }
+  private async Task Contact()
+  {
+    NavigationManager.NavigateTo("contact", forceLoad: true);
+  }
+
+
+}

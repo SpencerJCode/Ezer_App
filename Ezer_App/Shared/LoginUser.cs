@@ -9,10 +9,10 @@ namespace Ezer_App.Shared
 {
   public class LoginUser
   {
-    [Required]
+    [Required(ErrorMessage = "Email is required.")]
     [EmailAddress]
     public string LogEmail { get; set; }
-    [Required]
+    [Required(ErrorMessage = "Password is required.")]
     [DataType(DataType.Password)]
     public string LogPassword { get; set; }
   }

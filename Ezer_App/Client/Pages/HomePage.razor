@@ -1,17 +1,6 @@
 @page "/"
-@*
-//navbar-not-logged-in
+@inject NavigationManager NavigationManager
 
-
-//banner image
-
-//happy texts
-*@
-
-
-@* <div class="home-container">
-<img src="images/baby-feet.jpeg" alt="Hero" class="header-bg">
-</div> *@
 
 <div class="white-bg"></div>
 
@@ -74,3 +63,12 @@
 <br>
 <br>
 <br>
+
+@code {
+      protected override async Task OnInitializedAsync()
+    {
+        string currentUrl = NavigationManager.Uri;
+        Console.WriteLine(currentUrl);
+
+    }
+}

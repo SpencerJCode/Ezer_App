@@ -8,6 +8,7 @@ namespace Ezer_App.Client.Services.UserService
     Task<User> GetSingleUser(int id);
     // Task CreateUser(User user);
     Task<User> CreateUser(User user);
+    Task<User> LoginUser(LoginUser userSubmission);
     Task UpdateUser(User user);
     Task DeleteUser(int id);
   }
