@@ -10,7 +10,7 @@
 <div style="margin-left: 250px;">
   <h2 class="text-center display-6 text-ezer">Welcome @UserName!</h2>
 
-  <div
+  @* <div
     class="alert alert-danger col-7 m-auto mt-3 alert-dismissible fade show d-flex justify-content-between align-items-center"
     role="alert">
     <div>
@@ -20,22 +20,40 @@
     <button type="button" class="btn btn-sm btn-danger close" data-bs-dismiss="alert"><span class="oi oi-x"
         aria-hidden="true"></span></button>
 
-  </div>
+  </div> *@
 
   @{
     if (weekData != null)
     {
-      <div class="card col-7 m-auto mt-4">
-        <div class="card-header text-center">
-          <h4 class="display-6" style="font-size: 1.7rem;">This week in your pregnancy:</h4>
-        </div>
-        <div class="card-body text-center">
-          <p>You are @weekData?.WeekId weeks along!</p>
-          <div class="baby-image-box">
-            <img src="@weekData.BabyImage" alt="Baby Size">
+      <h4 class="display-6 text-ezer text-center mt-3" style="font-size: 1.7rem;">You're at week @weekData?.WeekId in your pregnancy!</h4>
+
+      <div class="pregnancy-cards d-flex justify-content-around col-11 gap-4 m-auto">
+        <div class="card col-4 box-shadow mt-3">
+          <div class="card-header" style="font-size: 1.3rem;">How big is baby at @weekData?.WeekId weeks?</div>
+          <div class="card-body">
+            <div class="baby-image-box m-auto text-center">
+              <img src="@weekData.BabyImage" alt="Baby Size">
+            </div>
+              <p>@weekData.BabySize</p>
           </div>
-          <p>@weekData.BabySize</p>
-          <p>For more info, visit <a href="@weekData.WeekLink">The Bump</a>.</p>
+        </div>
+        <div class="card col-4 box-shadow mt-3">
+          <div class="card-header" style="font-size: 1.3rem;">What is baby up to?</div>
+          <div class="card-body">
+              <p>@weekData.BabyActivity</p>
+          </div>
+        </div>
+        <div class="card col-4 box-shadow mt-3">
+          <div class="card-header" style="font-size: 1.3rem;">Key Takeaways:</div>
+          <div class="card-body">
+              <p>@weekData.KeyTakeawaysBottom</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bump-card col-3 m-auto mt-4 p-0">
+        <div class="card-body text-center p-3">
+          <p style="margin: 0;">For more info, visit <a href="@weekData.WeekLink">The Bump</a>.</p>
         </div>
       </div>
     }

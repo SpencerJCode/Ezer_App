@@ -15,3 +15,18 @@ label {
 .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label {
   margin-top: -5px;
 }
+
+.footer {
+  background-color: rgb(163,196,211);
+  left: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  box-shadow: -3px 0px 3px rgba(0,0,0,.3);
+  z-index: 100;
+}
+
+.footer a {
+  color: inherit;
+}

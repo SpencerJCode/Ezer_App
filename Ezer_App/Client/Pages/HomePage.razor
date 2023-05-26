@@ -5,22 +5,48 @@
 
 <div class="white-bg"></div>
 
-<div class="header-bg"></div>
+<div class="header-bg">
+</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="box-content col-11 m-auto">
+    <h1 class="text-center text-light display-6">A pregnancy helper app, and caregiver social network.</h1>
+    <div class="welcome-text col-11 m-auto">
+      <p class="text-center mt-3 mb-5 text-light display-6" style="font-size: 2rem;">Welcome to Ezer App!</p>
+      <div class="feature-cards d-flex justify-content-around">
+        <div class="card">
+          <div class="card-header text-center display-6" style="font-size: 2rem;">Who is this for?</div>
+          <div class="card-body" style="font-size: 1.2rem; width: 360px">
+            <ul>
+              <li>Expectant Mothers</li>
+              <li>Midwives</li>
+              <li>Doulas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header text-center display-6" style="font-size: 2rem;">What does it do?</div>
+          <div class="card-body" style="font-size: 1.2rem; width: 360px">
+            <ul>
+              <li>Connects expectant mothers with Midwives and Doulas in their area</li>
+              <li>Provides weekly pregnancy updates</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header text-center display-6" style="font-size: 2rem;">How do I start?</div>
+          <div class="card-body" style="font-size: 1.2rem; width: 360px">
+            <ol>
+              <li>Click "Login" to create an account</li>
+              <li>Add your information under My Account</li>
+              <li>Begin your search with "Find Caregiver(s)"</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+</div>
 
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -28,48 +54,38 @@
 
 
 <div class="test-box">
-  <div class="box-content col-10 m-auto">
-    <h1 class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, magnam.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas labore omnis, sint esse assumenda excepturi quod
-      consectetur placeat quisquam amet unde, ab rem qui voluptatum velit recusandae magni quos odit.</p>
+  <h2 class="text-center display-5 mb-3">What is Ezer?</h2>
+  <div class="ezer-def-container">
+    <div class="blacked-bg col-6 m-auto">
+      <div class="ezer-def-body">
+        <div class="ezer-def-content col-10 m-auto">
+          <div class="mb-3">
+            <h1 class="display-3">E<span style="position: relative; top: 10px;">•</span>zer</h1>
+            <h1 class="display-6" style="color: rgb(158, 186, 186);">/ay'-zer/ <em>noun</em></h1>
+          </div>
+          <div class="hor-line col-12"></div>
+          <div class="mt-2">
+            <h2 style="font-weight: 300 !important">1. An assistant and support in times of hardship and distress.</h2>
+            <h2 style="font-weight: 300 !important">2. One who helps.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="test-box">
-
+<div class="footer">
+  <p style="margin: 10px; padding: 10px; font-size: 1.1rem" class="text-ezer display-6">Ezer App - 2023 - Created By <a href="https://www.linkedin.com/in/spencer-j-6ba942198/" target="_blank">Spencer Johnson</a> and <a href="http://evanwiorek.com" target="_blank">Evan Wiorek</a></p>
 </div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 @code {
-      protected override async Task OnInitializedAsync()
-    {
-        string currentUrl = NavigationManager.Uri;
-        Console.WriteLine(currentUrl);
+  protected override async Task OnInitializedAsync()
+  {
+    string currentUrl = NavigationManager.Uri;
+    Console.WriteLine(currentUrl);
 
-    }
+  }
 }

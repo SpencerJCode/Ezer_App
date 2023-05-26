@@ -1,31 +1,35 @@
 @inject NavigationManager NavigationManager
 
-<div class="card box-shadow">
-    <div class="card-header">@Caregiver.FirstName @Caregiver.LastName</div>
+<div class="card-1 box-shadow @hoverClass">
+    <p class="display-6" style="font-size: 1.4rem;">@Caregiver.FirstName @Caregiver.LastName</p>
     <div class="card-body">
         @{imgsrc = "images/" + @random.Next(1,41) + ".png";}
         <img src="@imgsrc" class="search-image">
         <br>
-        <h6>Lives in:</h6>
-        <h4>@Caregiver.AddressCity</h4>
-        <p style="margin: 2px; padding: 2px;">@Caregiver.Email</p>
+        <h6 class="display-6 mt-2" style="font-size: 1.2rem;">Lives in:</h6>
+        <h4 class="display-6 mt-2" style="font-size: 1.5rem;">@Caregiver.AddressCity</h4>
+        @* <p style="margin: 2px; padding: 2px;">@Caregiver.Email</p> *@
         <div class="job-titles d-flex justify-content-center gap-2">
             @{
                 if(Caregiver.IsDoula & Caregiver.IsMidwife)
                 {
-                    <p style="margin: 2px; padding: 2px;">Doula, Midwife</p>
+                    <p class="display-6 mt-2" style="font-size: 1.1rem;margin: 4px; padding: 2px; color: rgb(161, 209, 237)">Doula, Midwife</p>
                 }
                 if(Caregiver.IsMidwife & !Caregiver.IsDoula)
                 {
-                    <p style="margin: 2px; padding: 2px;">Midwife</p>
+                    <p class="display-6 mt-2" style="font-size: 1.1rem;margin: 4px; padding: 2px; color: rgb(161, 209, 237)">Midwife</p>
                 }
                 else if(Caregiver.IsDoula & !Caregiver.IsMidwife)
                 {
-                    <p style="margin: 2px; padding: 2px;">Doula</p>
+                    <p class="display-6 mt-2" style="font-size: 1.1rem;margin: 4px; padding: 2px; color: rgb(161, 209, 237)">Doula</p>
+                }
+                else if(!Caregiver.IsMidwife & !Caregiver.IsDoula)
+                {
+                    <p class="display-6 mt-2" style="font-size: 1.1rem;margin-bottom: 32px;"></p>
                 }
             }
         </div>
-        <button class="btn btn-primary col-10" @onclick="(() => ShowCaregiver(Caregiver.UserId))">View</button>
+        <button class="btn btn-primary col-10" @onmouseover="MouseOver" @onmouseout="MouseOut" @onclick="(() => ShowCaregiver(Caregiver.UserId))">View</button>
     </div>
 </div>
 
@@ -39,4 +43,8 @@
     {
         NavigationManager.NavigateTo($"caregiverdetails/{id}");
     }
+
+    string hoverClass { get;set; }
+    void MouseOver(MouseEventArgs e) { hoverClass="hover-class";}
+    void MouseOut(MouseEventArgs e) { hoverClass="";}
 }

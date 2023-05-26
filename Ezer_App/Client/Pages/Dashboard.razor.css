@@ -1,0 +1,24 @@
+.baby-image-box img {
+  width: 150px;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .4));
+  background-color: rgba(63, 122, 156, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.bump-card {
+  background-color: rgb(37,71,90);
+  box-shadow: 2px 2px 15px rgba(61, 69, 73, 0.1), 2px 2px 3px rgba(61, 69, 73, 0.2);
+  padding: 30px;
+  border-radius: 10px 10px 30px 30px;
+  color: azure;
+}
+
+.bump-card a {
+  color: rgb(158, 186, 186);
+  transition: .2s;
+}
+
+.bump-card a:hover {
+  color: azure;
+}

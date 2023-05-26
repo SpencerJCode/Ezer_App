@@ -184,6 +184,7 @@ a,
 ::-webkit-scrollbar-thumb {
     /* 99cce5 */
     background: #99cce5;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -191,5 +192,38 @@ a,
 }
 
 .box-shadow {
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 2px 2px 15px rgba(61, 69, 73, 0.1), 2px 2px 3px rgba(61, 69, 73, 0.2);
 }
+
+.site-title {
+    text-decoration: none;
+    color: inherit;
+    transition: .2s;
+  }
+  
+  .site-title:hover {
+    filter: brightness(1.2);
+  }
+  
+  .site-title img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .site-title h1 {
+    font-family: 'KlubKatz', sans-serif;
+    font-weight: 900;
+    font-size: 3rem !important;
+    margin: 0;
+    word-spacing: -1rem !important;
+    color: rgb(37, 71, 90);
+  }
+  
+  .site-title h3 {
+    font-family: 'KlubKatz', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem !important;
+    margin-top: -5px;
+    word-spacing: -.5rem !important;
+    color: rgb(53, 99, 126);
+  }

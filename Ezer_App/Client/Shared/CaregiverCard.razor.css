@@ -1,7 +1,12 @@
-.card {
-    width : 250px;
-    /* outline: solid 2px black; */
-    margin: 5px;
+.card-1 {
+    margin-top: 15px;
+    background-color: rgb(37,71,90) !important;
+    box-shadow: 2px 2px 15px rgba(61, 69, 73, 0.2), 2px 2px 3px rgba(61, 69, 73, 0.4);
+    padding: 20px;
+    border-radius: 15px 0px;
+    color: azure;
+    margin: 10px;
+    width: 250px;
 }
 
 .button {
@@ -11,9 +16,14 @@
 }
 
 .search-image {
+    width: 110px;
     height: 110px;
-    width: auto;
-    box-shadow: 1px 1px 1px 1px white;
-    background-color: white;
+    object-fit: cover;
+    object-position:top;
     border-radius: 7px;
+}
+
+.hover-class {
+    transform: scale(1.02) rotate(-1deg);
+    transition: .1s;
 }

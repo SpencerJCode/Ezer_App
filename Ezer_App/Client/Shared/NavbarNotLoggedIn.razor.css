@@ -1,5 +1,5 @@
 .navbar-body {
-  background: linear-gradient(0deg, rgba(63, 128, 160, .6) 0%, rgba(57,159,209,.5) 100%);
+  background: linear-gradient(0deg, rgba(75, 150, 188, 0.6) 0%, rgba(135, 215, 255, 0.5) 100%);
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -8,41 +8,52 @@
 }
 
 .navlinks a {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: rgb(37, 71, 90);
   text-decoration: none;
+  transition: .2s;
 }
 
 .navlinks {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: rgb(37, 71, 90);
   margin-top: 10px;
+}
+
+.navlinks a:hover {
+  color: rgb(61, 122, 157);
 }
 
 .site-title {
   text-decoration: none;
   color: inherit;
-  /* filter: drop-shadow(0px 0px 30px rgba(255,255,255,.3)) drop-shadow(0px 0px 10px rgba(255,255,255,.1)); */
+  transition: .2s;
+}
+
+.site-title:hover {
+  filter: brightness(1.2);
 }
 
 .site-title img {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
+  position: relative;
+  transform: translateY(-5px);
 }
 
 h1 {
   font-family: 'KlubKatz', sans-serif;
   font-weight: 900;
-  font-size: 3rem !important;
+  font-size: 2rem !important;
   margin: 0;
-  word-spacing: -1rem !important;
+  word-spacing: -.5rem !important;
   color: rgb(37, 71, 90);
 }
 
 h3 {
   font-family: 'KlubKatz', sans-serif;
   font-weight: 900;
-  font-size: 1.5rem !important;
+  font-size: 1.3rem !important;
   margin-top: -5px;
   word-spacing: -.5rem !important;
   color: rgb(53, 99, 126);
