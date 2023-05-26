@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">@Caregiver.FirstName @Caregiver.LastName</div>
     <div class="card-body">
-        @{imgsrc = "images/" + @Caregiver.FirstName + ".png";}
+        @{imgsrc = "images/" + @random.Next(1,41) + ".png";}
         <img src="@imgsrc" class="search-image">
         <br>
         <h6>Lives in:</h6>
@@ -12,9 +12,8 @@
 </div>
 
 @code {
-    // Demonstrates how a parent component can supply parameters
     public string imgsrc {get;set;} = "";
-    
+    Random random = new Random();    
     [Parameter]
     public User? Caregiver { get; set; }
 
