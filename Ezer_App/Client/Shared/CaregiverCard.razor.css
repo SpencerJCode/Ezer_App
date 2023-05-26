@@ -23,6 +23,10 @@
     border-radius: 7px;
 }
 
+.search-image:hover {
+    cursor: pointer;
+}
+
 .hover-class {
     transform: scale(1.02) rotate(-1deg);
     transition: .1s;

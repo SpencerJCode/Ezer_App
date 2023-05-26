@@ -1,5 +1,6 @@
 @page "/caregiversearch"
 @inject IUserService UserService
+@inject ILocalStorageService localStorage
 
 <PageTitle>Find an Ezer!</PageTitle>
 
@@ -8,7 +9,7 @@
   <p class="text-center display-9 text-ezer">Input a search radius below</p>
   <div class="col-5 m-auto">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" @bind-value="SearchState" placeholder="Please enter a state name"
+      <input type="text" class="form-control" @bind-value="SearchState" placeholder="Enter a state name here:"
         aria-label="Name" aria-describedby="basic-addon2">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary search-button" type="button" onclick="@SetFilter">Search</button>

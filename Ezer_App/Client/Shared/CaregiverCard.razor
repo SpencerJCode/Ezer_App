@@ -4,7 +4,7 @@
     <p class="display-6" style="font-size: 1.4rem;">@Caregiver.FirstName @Caregiver.LastName</p>
     <div class="card-body">
         @{imgsrc = "images/" + @random.Next(1,41) + ".png";}
-        <img src="@imgsrc" class="search-image">
+        <img src="@imgsrc" class="search-image" @onclick="(() => ShowCaregiver(Caregiver.UserId))">
         <br>
         <h6 class="display-6 mt-2" style="font-size: 1.2rem;">Lives in:</h6>
         <h4 class="display-6 mt-2" style="font-size: 1.5rem;">@Caregiver.AddressCity</h4>
