@@ -123,6 +123,7 @@
       </div>
     </div>
   </div>
+  <button type="button" onclick="@SecretButton">SECRET BUTTON</button>
 </div>
 
 
@@ -183,12 +184,7 @@
     StateHasChanged();
   }
 
-
-
-
   public bool DisclaimerModelOpen { get; set; }
-
-
 
   private void OnDisclaimerAgree(bool accepted)
   {
@@ -200,5 +196,137 @@
   {
     DisclaimerModelOpen = true;
     StateHasChanged();
+  }
+  private async Task SecretButton()
+  {
+    Random random = new Random();
+    List<string> firstnames = new List<string>();
+      firstnames.Add("Jane");
+      firstnames.Add("Wonda");
+      firstnames.Add("Deb");
+      firstnames.Add("Debbie");
+      firstnames.Add("Audrey");
+      firstnames.Add("Aubrey");
+      firstnames.Add("Cassie");
+      firstnames.Add("Lyla");
+      firstnames.Add("Aaron");
+      firstnames.Add("Rita");
+      firstnames.Add("Stacey");
+      firstnames.Add("Trish");
+      firstnames.Add("Brice");
+      firstnames.Add("Susan");
+      firstnames.Add("Belinda");
+    List<string> lastnames = new List<string>();
+      lastnames.Add("Jones");
+      lastnames.Add("Williams");
+      lastnames.Add("Dedrick");
+      lastnames.Add("Devris");
+      lastnames.Add("Anders");
+      lastnames.Add("Akron");
+      lastnames.Add("Carter");
+      lastnames.Add("Liami");
+      lastnames.Add("Archer");
+      lastnames.Add("Lacy");
+      lastnames.Add("Dimi");
+      lastnames.Add("Iqra");
+      lastnames.Add("Gudrun");
+      lastnames.Add("Miria");
+      lastnames.Add("Jefferson");
+    List<string> states = new List<string>();
+      {states.Add("Alabama");
+      states.Add("Alaska");
+      states.Add("Arizona");
+      states.Add("Arkansas");
+      states.Add("California");
+      states.Add("Colorado");
+      states.Add("Connecticut");
+      states.Add("Delaware");
+      states.Add("Florida");
+      states.Add("Georgia");
+      states.Add("Hawaii");
+      states.Add("Idaho");
+      states.Add("Illinois");
+      states.Add("Indiana");
+      states.Add("Iowa");
+      states.Add("Kansas");
+      states.Add("Kentucky");
+      states.Add("Louisiana");
+      states.Add("Maine");
+      states.Add("Maryland");
+      states.Add("Massachusetts");
+      states.Add("Michigan");
+      states.Add("Minnesota");
+      states.Add("Mississippi");
+      states.Add("Missouri");
+      states.Add("Montana");
+      states.Add("Nebraska");
+      states.Add("Nevada");
+      states.Add("New Hampshire");
+      states.Add("New Jersey");
+      states.Add("New Mexico");
+      states.Add("New York");
+      states.Add("North Carolina");
+      states.Add("North Dakota");
+      states.Add("Ohio");
+      states.Add("Oklahoma");
+      states.Add("Oregon");
+      states.Add("Pennsylvania");
+      states.Add("Rhode Island");
+      states.Add("South Carolina");
+      states.Add("South Dakota");
+      states.Add("Tennessee");
+      states.Add("Texas");
+      states.Add("Utah");
+      states.Add("Vermont");
+      states.Add("Virginia");
+      states.Add("Washington");
+      states.Add("West Virginia");
+      states.Add("Wisconsin");
+      states.Add("Wyoming");}
+    List<string> cities = new List<string>();
+      {cities.Add("Washington");
+      cities.Add("Springfield");
+      cities.Add("Chester");
+      cities.Add("Lincoln");
+      cities.Add("Jamestown");
+      cities.Add("Brentwood");
+      cities.Add("Germantown");
+      cities.Add("Salem");
+      cities.Add("Greenville");
+      cities.Add("Bristol");
+      cities.Add("Fairview");
+      cities.Add("Madison");
+      cities.Add("Georgetown");
+      cities.Add("Williamsburg");
+      cities.Add("Stewart");
+      cities.Add("Lansing");
+      cities.Add("Landsdown");
+      cities.Add("Porttown");
+      cities.Add("Pottersfield");
+      cities.Add("Bakersfield");
+      cities.Add("Hillcrest");
+      cities.Add("Wilderness");
+      cities.Add("Steeple");
+      cities.Add("Andover");
+      }
+    User fakeNewUser = new User();
+    fakeNewUser.FirstName = firstnames[random.Next(0,15)];
+    fakeNewUser.LastName = lastnames[random.Next(0,15)];
+    fakeNewUser.Email = $"{fakeNewUser.FirstName}{fakeNewUser.LastName}{random.Next(1,4000)}@gmail.com";
+    fakeNewUser.Password = "password!1";
+    fakeNewUser.ConfirmPassword = "password!1";
+    fakeNewUser.AddressState = states[random.Next(0,50)];
+    fakeNewUser.AddressCity = cities[random.Next(0,24)];
+
+    Console.WriteLine(fakeNewUser.FirstName);
+    Console.WriteLine(fakeNewUser.LastName);
+    Console.WriteLine(fakeNewUser.Email);
+    Console.WriteLine(fakeNewUser.Password);
+    Console.WriteLine(fakeNewUser.AddressCity);
+    Console.WriteLine(fakeNewUser.AddressState);
+
+
+
+    fakeNewUser = await UserService.CreateUser(fakeNewUser);
   }
 }
