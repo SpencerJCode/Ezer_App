@@ -49,7 +49,8 @@
 
   private void SetFilter()
   {
-    FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState && u.IsDoula | u.IsMidwife).ToList();
+    @* FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState && u.IsDoula | u.IsMidwife).ToList(); *@
+    FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState).ToList();
   }
 
   protected override async Task OnInitializedAsync()
