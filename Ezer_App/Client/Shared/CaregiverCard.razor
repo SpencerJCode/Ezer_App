@@ -1,6 +1,6 @@
 @inject NavigationManager NavigationManager
 
-<div class="card-1 box-shadow @hoverClass">
+<div class="card-1 box-shadow hover-class">
     <p class="display-6" style="font-size: 1.4rem;">@Caregiver.FirstName @Caregiver.LastName</p>
     <div class="card-body">
         @{imgsrc = "images/" + @random.Next(1,41) + ".png";}
@@ -29,7 +29,7 @@
                 }
             }
         </div>
-        <button class="btn btn-primary col-10" @onmouseover="MouseOver" @onmouseout="MouseOut" @onclick="(() => ShowCaregiver(Caregiver.UserId))">View</button>
+        <button class="btn btn-primary col-10" @onclick="(() => ShowCaregiver(Caregiver.UserId))">View</button>
     </div>
 </div>
 

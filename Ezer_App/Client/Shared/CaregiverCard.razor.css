@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-.hover-class {
-    transform: scale(1.02) rotate(-1deg);
+.hover-class:hover {
+    transform: scale(1.02) rotate(-.5deg);
     transition: .1s;
 }

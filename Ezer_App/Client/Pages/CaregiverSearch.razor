@@ -8,14 +8,15 @@
   <h3 class="text-center display-6 text-ezer">Search for Caregivers</h3>
   <p class="text-center display-9 text-ezer">Input a search radius below</p>
   <div class="col-5 m-auto">
-    <div class="input-group mb-3">
+    <div class="input-group mb-4">
       <input type="text" class="form-control" @bind-value="SearchState" placeholder="Enter a state name here:"
         aria-label="Name" aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary search-button" type="button" onclick="@SetFilter">Search</button>
+        <button class="btn btn-primary search-button" type="button" onclick="@SetFilter" style="color: rgb(220, 243, 243);"><span class="oi oi-magnifying-glass" ></span> Search</button>
       </div>
     </div>
   </div>
+  <hr class="col-11 m-auto mb-3">
   <div class="col-11 m-auto">
     <div class="search-result-container text-center m-auto d-flex flex-wrap justify-content-start">
       @{
