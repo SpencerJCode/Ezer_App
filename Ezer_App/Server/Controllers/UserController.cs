@@ -36,18 +36,30 @@ namespace Ezer_App.Server.Controllers
     public async Task<ActionResult<WeekData>> GetWeekData(DateTime dueDate)
     {
       // var DueDate = DateTime.Now.AddDays(20 * 7 + 1);
+      int? NumOfWeeks = 0;
+      WeekData? weekData = new WeekData();
       DateTime dueDateDate = (DateTime)dueDate;
-      // var DueDate = dueDateDate.AddDays(1);
-      var DueDate = dueDateDate;
-      var ConceptionDate = DateTime.Now;
-      var TimeDiff = DueDate - ConceptionDate;
-      int? NumOfWeeks = TimeDiff.Days / 7;
-      WeekData? weekData = await _context.TheBumpData.FirstOrDefaultAsync(w => w.WeekId == NumOfWeeks);
-      if (weekData == null)
+      var TimeDiffOne = dueDateDate - DateTime.Now;
+      if (TimeDiffOne.Days < 7)
       {
-        return NotFound("Week data not found.");
+        Console.WriteLine(dueDateDate.Day - DateTime.Now.Day);
+        NumOfWeeks = 1;
+        weekData = await _context.TheBumpData.FirstOrDefaultAsync(w => w.WeekId == NumOfWeeks);
       }
-      return Ok(weekData);
+      if (TimeDiffOne.Days > 7)
+      {
+        var DueDate = dueDateDate.AddDays(1);
+        var ConceptionDate = DateTime.Now;
+        var TimeDiff = DueDate - ConceptionDate;
+        NumOfWeeks = TimeDiff.Days / 7;
+        weekData = await _context.TheBumpData.FirstOrDefaultAsync(w => w.WeekId == NumOfWeeks);
+      }
+      if (weekData != null)
+      {
+        return Ok(weekData);
+      }
+      return NotFound("Week data not found.");
+      // var DueDate = dueDateDate.AddDays(1);
     }
 
     [HttpPut("{userId}")]

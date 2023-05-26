@@ -150,6 +150,7 @@
   private async Task HandleSubmit()
   {
     await UserService.UpdateUser((User)currentUser);
-    @* NavigationManager.NavigateTo("dashboard"); *@
+    await localStorage.SetItemAsync("DueDate", currentUser.DueDate);
+    NavigationManager.NavigateTo("dashboard");
   }
 }
