@@ -42,11 +42,16 @@
             <label for="Password">Password:</label>
             <ValidationMessage For="() => newUser.Password" />
           </div>
-          <div class="form-floating mt-3">
+          @* <div class="form-floating mt-3">
             <InputText id="ConfirmPassword" @bind-Value="newUser.ConfirmPassword" class="form-control" placeholder="F"
               style="font-size: .8rem; height: 45px" />
             <label for="ConfirmPassword">Confirm Password:</label>
             <ValidationMessage For="() => newUser.ConfirmPassword" />
+          </div> *@
+          <div class="form-floating mt-3">
+            <InputText id="ConfirmPassword" @bind-Value="confirmPassword" class="form-control" placeholder="F"
+              style="font-size: .8rem; height: 45px" />
+            <label for="ConfirmPassword">Confirm Password:</label>
           </div>
           <button type="button" class="mt-3 btn btn-primary" @onclick="() => OpenDisclaimerModal()">Register</button>
 
@@ -127,7 +132,7 @@
   public EventCallback<bool> OnClose { get; set; }
   User? newUser = new User();
   LoginUser? loginUser = new LoginUser();
-
+  public string confirmPassword { get;set; } = "";
   [Parameter]
   public string ModalBody { get; set; } = "This is the modal body.";
   public string userExists { get; set; } = "";
