@@ -14,3 +14,12 @@
 .show-div {
   visibility: visible;
 }
+
+.btn-search {
+  color: azure  !important;
+  background-color: rgb(37, 71, 90) !important;
+}
+
+.btn-search:hover {
+  background-color: rgb(48, 92, 118) !important;
+}
