@@ -18,7 +18,7 @@
   </div>
   <hr class="col-11 m-auto mb-3">
   <div class="col-11 m-auto">
-    <div class="search-result-container text-center m-auto d-flex flex-wrap justify-content-start">
+    <div class="search-result-container text-center m-auto d-flex flex-wrap justify-content-start @showDiv">
       @{
         if (FilteredUsers.Count() > 0)
         {
@@ -47,10 +47,12 @@
 
   public string? SearchState { get; set; }
   User Caregiver { get; set; } = new User();
+  public string showDiv { get;set; } = "";
   List<User> FilteredUsers { get; set; } = new List<User>();
 
   private void SetFilter()
   {
+    showDiv = "show-div";
     @* FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState && u.IsDoula | u.IsMidwife).ToList(); *@
     FilteredUsers = UserService.Users.Where(u => u.AddressState == SearchState).ToList();
   }
