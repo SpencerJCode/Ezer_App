@@ -1,4 +1,6 @@
-<div class="card">
+@inject NavigationManager NavigationManager
+
+<div class="card box-shadow">
     <div class="card-header">@Caregiver.FirstName @Caregiver.LastName</div>
     <div class="card-body">
         @{imgsrc = "images/" + @random.Next(1,41) + ".png";}
@@ -6,8 +8,24 @@
         <br>
         <h6>Lives in:</h6>
         <h4>@Caregiver.AddressCity</h4>
-        <p>@Caregiver.Email</p>
-        <button class="nav-link button" href="/caregiverdetails/@Caregiver.UserId">View</button>
+        <p style="margin: 2px; padding: 2px;">@Caregiver.Email</p>
+        <div class="job-titles d-flex justify-content-center gap-2">
+            @{
+                if(Caregiver.IsDoula & Caregiver.IsMidwife)
+                {
+                    <p style="margin: 2px; padding: 2px;">Doula, Midwife</p>
+                }
+                if(Caregiver.IsMidwife & !Caregiver.IsDoula)
+                {
+                    <p style="margin: 2px; padding: 2px;">Midwife</p>
+                }
+                else if(Caregiver.IsDoula & !Caregiver.IsMidwife)
+                {
+                    <p style="margin: 2px; padding: 2px;">Doula</p>
+                }
+            }
+        </div>
+        <button class="btn btn-primary col-10" @onclick="(() => ShowCaregiver(Caregiver.UserId))">View</button>
     </div>
 </div>
 
@@ -17,4 +35,8 @@
     [Parameter]
     public User? Caregiver { get; set; }
 
+    void ShowCaregiver(int id)
+    {
+        NavigationManager.NavigateTo($"caregiverdetails/{id}");
+    }
 }

@@ -77,32 +77,7 @@ namespace Ezer_App.Client.Services.UserService
     }
     public async Task UpdateUser(User user)
     {
-      // Console.WriteLine("_______FROM USER SERVICE ABOVE var result______");
-      Console.WriteLine(user.UserId);
-      Console.WriteLine(user.AddressCity);
-      Console.WriteLine(user.AddressState);
-      Console.WriteLine(user.AddressStreet);
-      Console.WriteLine(user.AddressZipcode);
-      Console.WriteLine(user.DueDate);
-      Console.WriteLine(user.EmergencyFirstName);
-      Console.WriteLine(user.EmergencyLastName);
-      Console.WriteLine(user.EmergencyNumber);
-      Console.WriteLine(user.IsDoula);
-      Console.WriteLine(user.IsMidwife);
-      Console.WriteLine(user.PhoneNumber);
-      Console.WriteLine(user.SpouseFirstName);
-      Console.WriteLine(user.SpouseLastName);
-      Console.WriteLine(user.SpouseNumber);
       var result = await _http.PutAsJsonAsync<User>($"api/user/{user.UserId}", user);
-      if (result.IsSuccessStatusCode) {
-        // Console.WriteLine("Result below");
-        // Console.WriteLine(result);
-        // User? updatedUser = await SetUser(result);
-        // Console.WriteLine("updatedUser below");
-        // Console.WriteLine(updatedUser.DueDate);
-        // return updatedUser;
-      }
-      // return null;
     }
   }
 }

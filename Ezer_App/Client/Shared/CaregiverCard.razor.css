@@ -1,7 +1,6 @@
 .card {
-    width : 350px;
-    outline: solid 2px black;
-    height : 330px;
+    width : 250px;
+    /* outline: solid 2px black; */
     margin: 5px;
 }
 
